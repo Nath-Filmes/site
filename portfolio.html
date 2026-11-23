@@ -53,6 +53,11 @@
       </div>
       <!-- Os cartões vêm de data/portfolio-aberto.json -->
       <div class="p-grade" id="grade-aberta" aria-live="polite"></div>
+      <!-- Aba Empresas: enquanto nenhum vídeo de empresa estiver pronto (data/portfolio-aberto.json), não aparecem
+           espaços reservados; fica só este botão. Quando houver vídeo, a grade volta sozinha e o botão some. -->
+      <div class="p-empresas" id="empresas-cta" hidden>
+        <a class="btn btn--escuro" data-wa="empresasPortfolio" href="#">Solicitar orçamento e portfólio</a>
+      </div>
     </div>
   </section>
 

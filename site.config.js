@@ -43,6 +43,8 @@ window.SITE_CONFIG = {
       "Oi, Nath! Vi o seu site e gostaria de um orçamento para o meu casamento. Pode me ajudar a escolher a modalidade e o pacote?",
     empresas:
       "Oi, Nath! Vi o seu site e quero conversar sobre vídeos e conteúdo para a minha empresa.",
+    empresasPortfolio:
+      "Oi, Nath! Vi o seu site e quero solicitar um orçamento e conhecer o portfólio de vídeos para a minha empresa.",
     portfolio:
       "Oi, Nath! Acabei de ver o seu portfólio completo e quero reservar a data do meu casamento.",
     geral:

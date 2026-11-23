@@ -84,7 +84,7 @@ Para cada vídeo: o `.mp4` em `assets/video/`, a capa `.jpg` com o **mesmo nome*
 | Casamentos | Cerimônia | ✅ `cerimonia.mp4` (81 s, 17 MB: só carrega quando a pessoa clica) |
 | Casamentos | Festa | ✅ `festa.mp4` (o certo, que veio de `festa certo.mp4`; 52 s, 8,8 MB) |
 | Trends | 3 vídeos | ✅ `trend-1.mp4`, `trend-2.mp4`, `trend-3.mp4` |
-| Empresas | 3 vídeos | ☐ 3 espaços reservados |
+| Empresas | 3 vídeos (depois) | Sem espaços reservados: por enquanto a aba mostra só o botão “Solicitar orçamento e portfólio” (WhatsApp). Com vídeo pronto, a grade volta sozinha |
 
 ### “Histórias recentes” da Página inicial
 Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa `exemplo1.mp4` (pré wedding), `exemplo2.mp4` (save the date) e `exemplo3.mp4` (making of), como estava antes, com as capas enviadas pela Nath: `home-historia-1.jpg` (pré wedding), `home-historia-2.jpg` (save the date) e `home-historia-3.jpg` (making of da noiva).

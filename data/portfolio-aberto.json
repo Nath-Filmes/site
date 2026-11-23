@@ -2,6 +2,7 @@
   "_como_editar": [
     "Cada item entre { } é um cartão de vídeo. Para trocar um espaço reservado por um vídeo real, preencha os campos abaixo.",
     "categoria: 'casamento', 'trend' ou 'empresa'. É ela que decide em qual aba do Portfólio o cartão aparece (Casamentos, Trends ou Empresas).",
+    "Empresas: enquanto nenhum cartão da categoria 'empresa' tiver vídeo (arquivo, youtube ou vimeo), a aba Empresas não mostra espaços reservados e fica só com o botão 'Solicitar orçamento e portfólio'. Quando um cartão ganhar vídeo, os cartões com vídeo aparecem e o botão some.",
     "tipo: o rótulo que aparece no cartão, ex.: 'Pré wedding', 'Making of da noiva', 'Cerimônia', 'Festa'. Se deixar vazio, aparece o nome da categoria.",
     "titulo: opcional. Só preencha com o nome do casal ou da empresa SE tiver autorização. Vazio = não aparece nome nenhum.",
     "local: texto curto opcional, ex.: 'Pouso Alegre, MG' (deixe vazio se não quiser).",

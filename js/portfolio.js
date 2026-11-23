@@ -21,9 +21,18 @@
   var itensAbertos = [];
   function desenharAbertos(filtro) {
     var grade = document.getElementById('grade-aberta');
+    var cta = document.getElementById('empresas-cta');
     if (!grade) return;
     grade.innerHTML = '';
     var lista = itensAbertos.filter(function (i) { return !filtro || i.categoria === filtro; });
+    // Empresas: cartões ainda sem vídeo não aparecem. Sem nenhum vídeo pronto, a aba mostra só o botão
+    // "Solicitar orçamento e portfólio" (WhatsApp). Quando um cartão ganhar vídeo, a grade volta sozinha.
+    var soEmpresa = (filtro === 'empresa');
+    if (soEmpresa) lista = lista.filter(function (i) { return i.arquivo || i.youtube || i.vimeo; });
+    var mostrarBotao = soEmpresa && !lista.length;
+    if (cta) cta.hidden = !mostrarBotao;
+    grade.hidden = mostrarBotao;
+    if (mostrarBotao) return;
     if (!lista.length) {
       grade.innerHTML = '<p class="completo__estado" style="grid-column:1/-1">Em breve, mais vídeos nesta categoria.</p>';
       return;
