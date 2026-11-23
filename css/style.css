@@ -574,13 +574,6 @@ body.menu-aberto { overflow: hidden; }
 .incl__lista span { color: var(--cinza); font-size: .96rem; line-height: 1.5; display: block; }
 @media (min-width: 900px) { .incl__grid { grid-template-columns: 1fr 1fr; gap: clamp(56px, 8vw, 120px); } }
 
-.passos { counter-reset: passo; display: grid; gap: 0; margin-top: 44px; border-top: 1px solid var(--linha-clara); }
-.passos li { counter-increment: passo; padding: 26px 0; border-bottom: 1px solid var(--linha-clara); display: grid; grid-template-columns: 56px 1fr; gap: 6px 16px; }
-.passos li::before { content: "0" counter(passo); grid-row: span 2; font-family: var(--f-serif); font-style: italic; font-size: 2.2rem; line-height: 1; color: var(--cinza-claro); }
-.passos strong { font: 600 clamp(1.4rem, 3vw, 1.8rem)/1.1 var(--f-serif); text-transform: uppercase; }
-.passos span { color: var(--cinza-claro); font-size: .98rem; }
-@media (min-width: 900px) { .passos { grid-template-columns: repeat(4, 1fr); border-top: 0; } .passos li { grid-template-columns: 1fr; border-bottom: 0; border-top: 1px solid var(--linha-clara); padding: 26px 28px 0 0; } .passos li::before { grid-row: auto; margin-bottom: 14px; } }
-
 /* ---------- 14 PORTFÓLIO ---------- */
 .p-hero { padding-block: clamp(64px, 9vw, 120px) clamp(40px, 6vw, 70px); text-align: center; min-height: clamp(440px, 60svh, 640px); display: flex; flex-direction: column; justify-content: center; }
 .p-hero .titulo { max-width: 14ch; margin-inline: auto; }

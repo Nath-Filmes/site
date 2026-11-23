@@ -16,3 +16,11 @@ amor-rever-risada.jpg: a convidada rindo. Era a foto do quadro "Rever reacoes."
 do carrossel, ate ser trocada pelo casal no parque (23/11/2026).
 Para usar de novo, mova para assets/img com o nome do quadro (amor-ouvir.jpg
 ou amor-rever.jpg) e confira o texto alternativo no site.config.js.
+
+Pasta capas-antigas: capas dos videos que eu tinha gerado a partir de quadros
+dos proprios videos (exemplo1, exemplo2, exemplo3, pre-wedding, cerimonia,
+festa). Foram trocadas pelas fotos que voce enviou (23/11/2026): Home usa
+assets/posters/home-historia-1 a 3.jpg e o Portfolio usa capa-pre-wedding,
+capa-making-of, capa-cerimonia e capa-festa. Para voltar a usar uma capa
+antiga, mova o arquivo para assets/posters e aponte o campo "poster" em
+data/historias-home.json ou data/portfolio-aberto.json.
