@@ -8,3 +8,9 @@ assets/img/guardadas/
 assets/img/LEIA-ME.txt
 assets/posters/LEIA-ME.txt
 assets/video/LEIA-ME.txt
+# Arquivos do npm e variáveis de ambiente: nunca devem ir para o site publicado
+.env
+.env.*
+node_modules/
+package.json
+package-lock.json

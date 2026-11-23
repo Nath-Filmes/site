@@ -23,7 +23,9 @@ Feito só com HTML, CSS e JavaScript, **sem instalar nada e sem “build”**: d
 | `assets/logo/` | Logos (PNG e WebP, fundo transparente, em preto, branco, vinho e creme) |
 | `assets/img/`, `assets/video/`, `assets/posters/` | Onde entram suas fotos, vídeos e capas |
 | `css/style.css` | Visual (cores, fontes, espaçamentos). As cores estão no topo, em `:root` |
-| `js/` | Comportamentos (`layout.js` monta o topo e o rodapé de todas as páginas) |
+| `js/` | Comportamentos (`layout.js` monta o topo e o rodapé de todas as páginas). `js/vendor/supabase.js` é a biblioteca do Supabase (seção 7) |
+| `tools/supabase/` | SQL da tabela do formulário (registro do que foi criado no Supabase) |
+| `package.json`, `.env` | Bibliotecas do Supabase e variáveis de ambiente (seção 7). Não fazem parte do site publicado |
 | `tools/otimizar-imagens.py` | (Opcional) deixa as fotos leves, em vários tamanhos |
 | `abrir-site-local.bat` | Abre o site no seu computador para você conferir |
 | `sitemap.xml`, `robots.txt` | Para o Google (veja a seção 9) |
@@ -123,14 +125,34 @@ O botão flutuante e todos os botões “Reservar minha data” e “Pedir orça
 
 ## 7. Formulário do portfólio completo
 
-O formulário (nome, e-mail e celular com consentimento) envia os dados para um serviço que **você** escolhe. Configure em `site.config.js`:
+O formulário (nome, e-mail e celular com consentimento) **grava no Supabase** (banco de dados), no projeto “nath filmes site Project”. A configuração fica em `site.config.js`:
 
 ```js
-FORM_ENDPOINT: "https://....",   // endereço do serviço
-FORM_TIPO: "formspree",          // "formspree", "netlify", "googlescript" ou "generico"
+FORM_TIPO: "supabase",
+SUPABASE_URL: "https://vvbvurgbeheedfuenawy.supabase.co",
+SUPABASE_PUBLISHABLE_KEY: "sb_publishable_...",   // chave PÚBLICA: pode ficar no site
+SUPABASE_TABELA: "leads_portfolio",
 ```
 
-Enquanto `FORM_ENDPOINT` estiver vazio, o formulário funciona em **modo de teste**: ele libera o portfólio, mas **não envia nada** (aparece o aviso “Modo de teste” na tela e no console do navegador). **Antes de divulgar o site, configure uma das opções abaixo**; senão o contato de quem preencher se perde. Na Vercel, use a opção A (Formspree) ou a C (Google Apps Script).
+### Onde ver os contatos
+Entre em **supabase.com/dashboard** → projeto *nath filmes site Project* → **Table Editor** → tabela **leads_portfolio**. Lá você vê nome, e-mail, celular, data e a página de origem, e o botão *Export* baixa tudo em CSV. Não precisa de login no site: o acesso é só o seu, pelo painel do Supabase.
+
+### Como isso é protegido
+- Qualquer visitante consegue **enviar** o formulário, mas **ninguém de fora consegue ler, alterar ou apagar** os contatos (RLS ligado, só permissão de inserir). Isso foi testado.
+- A chave `publishable` aparece no código do site de propósito: ela só abre o que o banco permite. **Nunca** cole no site a chave `secret` / `service_role`.
+- O banco recusa lixo: nome de 2 a 120 caracteres, e-mail e celular válidos e consentimento obrigatório. O SQL completo está em `tools/supabase/leads-portfolio.sql`.
+- Limite conhecido: não há limite de envios por pessoa. O site tem uma armadilha invisível contra robôs, mas alguém que chame a API direto pode enviar lixo em volume. Se acontecer, dá para acrescentar proteção (por exemplo, Cloudflare Turnstile).
+
+### Arquivos do Supabase no projeto
+- `js/vendor/supabase.js`: cópia da biblioteca `@supabase/supabase-js` (versão 2.119.0) que o navegador carrega só na página Portfólio. Fica no próprio site, sem depender de terceiros.
+- `package.json` e `package-lock.json`: guardam as versões exatas instaladas (`@supabase/supabase-js` 2.119.0 e `@supabase/ssr` 0.12.7). O `@supabase/ssr` é para Next.js e **este site não usa**; ele só está lá porque foi pedido.
+- `.env`: guarda `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, mas **o site estático não lê esse arquivo** (ele lê o `site.config.js`). O `.env` não vai para o GitHub nem para a Vercel.
+- Para atualizar a biblioteca (só quem mexe no código): `npm install --save-exact --ignore-scripts --min-release-age=7 @supabase/supabase-js` e depois copie `node_modules/@supabase/supabase-js/dist/umd/supabase.js` por cima de `js/vendor/supabase.js`.
+
+Se `SUPABASE_URL` ou a chave ficarem vazias, o formulário volta ao **modo de teste**: libera o portfólio, mas **não envia nada** (aparece o aviso “Modo de teste” na tela e no console do navegador).
+
+### Outras opções (só se um dia quiser trocar o Supabase por outro serviço)
+Troque `FORM_TIPO` e preencha `FORM_ENDPOINT` (endereço do serviço). Na Vercel, as opções que funcionam são a A (Formspree) e a C (Google Apps Script).
 
 ### Opção A: Formspree (a mais simples)
 1. Crie uma conta em formspree.io e clique em *New form*.
@@ -161,7 +183,7 @@ Enquanto `FORM_ENDPOINT` estiver vazio, o formulário funciona em **modo de test
 4. Cole em `FORM_ENDPOINT` e use `FORM_TIPO: "googlescript"`.
 
 ### Como testar
-Abra `portfolio.html`, preencha com dados de teste e confira se o contato chegou. Depois, para testar de novo, apague o sinal do navegador: nas ferramentas do navegador (F12) → *Application* → *Local Storage* → apague `nf_portfolio_liberado`. Ou use uma janela anônima.
+Abra `portfolio.html`, preencha com dados de teste e confira se o contato chegou (no Supabase: *Table Editor → leads_portfolio*; **apague a linha de teste depois**, para não misturar com contatos de verdade). Depois, para testar de novo, apague o sinal do navegador: nas ferramentas do navegador (F12) → *Application* → *Local Storage* → apague `nf_portfolio_liberado`. Ou use uma janela anônima.
 
 ### ⚠️ Sobre a proteção do portfólio
 O bloqueio é **“suave”**: a lista de vídeos só é baixada depois do envio do formulário e a pessoa fica liberada nas próximas visitas (o navegador guarda um sinal). Quem entende de tecnologia consegue abrir `data/portfolio-completo.json` direto no navegador. Para proteger **de verdade**, publique os vídeos como **“Não listados”** no YouTube ou no Vimeo e use os campos `youtube` ou `vimeo` do JSON (assim só quem recebe o código vê o vídeo).
@@ -207,7 +229,9 @@ O site já vem com o `vercel.json` (cabeçalhos de segurança, cache das fotos e
 3. Em *Framework Preset* deixe **Other**. Deixe **vazios** *Build Command*, *Output Directory* e *Install Command*. Clique em **Deploy**.
 4. Depois disso, **todo envio ao GitHub na ramificação `main` publica o site sozinho** (leva cerca de 1 minuto). Envios em outras ramificações geram um endereço de teste.
 5. Domínio próprio: no projeto, *Settings → Domains → Add* e siga as instruções de DNS.
-6. Troque o endereço de exemplo pelo real (seção 9) e configure o formulário (seção 7).
+6. Troque o endereço de exemplo pelo real (seção 9). O formulário já está ligado ao Supabase (seção 7); depois de publicar, faça um envio de teste e apague a linha no painel.
+
+O `package.json` só guarda as bibliotecas do Supabase. O site usa a cópia em `js/vendor/supabase.js`, então a Vercel não precisa montar nada. O `.vercelignore` e o `vercel.json` também escondem `package.json`, `package-lock.json` e `.env`.
 
 Confira depois de publicar:
 - Abra `seu-endereco.vercel.app/README.md` e `/tools/trocar-dominio.py`: o esperado é voltar para a página inicial. Se aparecer o texto do arquivo, avise para ajustarmos.

@@ -2,7 +2,7 @@
    NATH FILMES · PÁGINA PORTFÓLIO
    1) Exemplos disponíveis (abas Casamentos, Trends, Empresas) → data/portfolio-aberto.json
    2) Formulário (nome, e-mail, celular) com máscara, validação e envio
-      para o serviço configurado em FORM_ENDPOINT / FORM_TIPO
+      para o serviço configurado em FORM_TIPO (hoje: "supabase", tabela leads_portfolio)
    3) Depois do envio libera a grade completa → data/portfolio-completo.json
       (essa lista só é baixada depois do envio; o bloqueio é "suave")
    ===================================================================== */
@@ -107,11 +107,53 @@
     return { signal: ctl ? ctl.signal : undefined, limpar: function () { clearTimeout(t); } };
   }
 
+  /* ---- Supabase: grava a linha na tabela (só insert; o público não consegue ler nada) ---- */
+  var clienteSb = null;
+  function clienteSupabase() {
+    if (clienteSb) return clienteSb;
+    if (!window.supabase || typeof window.supabase.createClient !== 'function') return null;
+    // sem login: nada de sessão guardada no navegador de quem visita
+    clienteSb = window.supabase.createClient(
+      String(C.SUPABASE_URL).trim(),
+      String(C.SUPABASE_PUBLISHABLE_KEY).trim(),
+      { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } }
+    );
+    return clienteSb;
+  }
+
+  function enviarSupabase(dados, t) {
+    var temConfig = String(C.SUPABASE_URL || '').trim() && String(C.SUPABASE_PUBLISHABLE_KEY || '').trim();
+    if (!temConfig) {
+      t.limpar();
+      return new Promise(function (ok) { setTimeout(function () { ok({ demo: true }); }, 700); });
+    }
+    var sb = clienteSupabase();
+    if (!sb) { t.limpar(); return Promise.reject(new Error('A biblioteca do Supabase não carregou.')); }
+
+    // Os limites de tamanho são os mesmos das regras da tabela (veja tools/supabase/leads-portfolio.sql)
+    var consulta = sb.from(String(C.SUPABASE_TABELA || 'leads_portfolio').trim()).insert({
+      nome: dados.nome.slice(0, 120),
+      email: dados.email.slice(0, 254),
+      celular: dados.celular.slice(0, 20),
+      consentimento: true,
+      origem: dados.origem,
+      pagina: dados.pagina.slice(0, 500)
+    });
+    if (t.signal) consulta = consulta.abortSignal(t.signal);
+    return consulta.then(function (res) {
+      t.limpar();
+      if (res.error) throw res.error;
+      return {};
+    }, function (e) { t.limpar(); throw e; });
+  }
+
   function enviar(dados) {
     var ep = String(C.FORM_ENDPOINT || '').trim();
     var tipo = String(C.FORM_TIPO || 'formspree').toLowerCase();
     var t = comTempo(15000);
     var req;
+
+    if (tipo === 'supabase') return enviarSupabase(dados, t);
 
     if (!ep && tipo !== 'netlify') {
       t.limpar();
@@ -233,7 +275,7 @@
 
       enviar(dados).then(function (r) {
         gravarFlag();
-        if (r && r.demo) console.warn('[Nath Filmes] Formulário em MODO DE TESTE: nada foi enviado. Configure FORM_ENDPOINT no site.config.js.');
+        if (r && r.demo) console.warn('[Nath Filmes] Formulário em MODO DE TESTE: nada foi enviado. Confira FORM_TIPO, SUPABASE_URL e SUPABASE_PUBLISHABLE_KEY (ou FORM_ENDPOINT) no site.config.js.');
         var demo = document.getElementById('aviso-teste');
         if (demo) demo.hidden = !(r && r.demo);
         mostrarCompleto(true);

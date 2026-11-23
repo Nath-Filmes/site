@@ -51,18 +51,28 @@ window.SITE_CONFIG = {
 
   /* ------------------------------------------------------------------
      3) FORMULÁRIO DO PORTFÓLIO COMPLETO
-        Veja o README.md (seção "Formulário") para escolher e configurar.
+        Hoje ele grava no SUPABASE (banco de dados). Para ver os contatos:
+        supabase.com/dashboard → projeto "nath filmes site Project" → Table Editor → leads_portfolio.
+        Veja o README.md (seção "Formulário") para mais detalhes.
      ------------------------------------------------------------------ */
-  // Endereço do serviço que vai receber nome, e-mail e celular.
-  // Enquanto estiver vazio o formulário funciona em MODO DE TESTE (não envia nada).
-  FORM_ENDPOINT: "",
-
-  // Qual serviço você escolheu? Use um destes:
-  //   "formspree"    → https://formspree.io/f/xxxxxxx
+  // Qual serviço recebe nome, e-mail e celular? Use um destes:
+  //   "supabase"     → grava no banco de dados do Supabase (o que está em uso)
+  //   "formspree"    → https://formspree.io/f/xxxxxxx           (preencha FORM_ENDPOINT)
   //   "netlify"      → só funciona se o site estiver na Netlify (NÃO funciona na Vercel)
-  //   "googlescript" → https://script.google.com/macros/s/.../exec
-  //   "generico"     → qualquer endereço que aceite um POST com JSON
-  FORM_TIPO: "formspree",
+  //   "googlescript" → https://script.google.com/macros/s/.../exec   (preencha FORM_ENDPOINT)
+  //   "generico"     → qualquer endereço que aceite um POST com JSON  (preencha FORM_ENDPOINT)
+  // Se o serviço escolhido estiver sem endereço/chave, o formulário funciona em MODO DE TESTE (não envia nada).
+  FORM_TIPO: "supabase",
+
+  // Dados do Supabase. A chave "publishable" é PÚBLICA por desenho (pode ficar no site):
+  // quem protege os contatos é o banco, que só deixa o público ENVIAR o formulário, nunca ler.
+  // NUNCA cole aqui a chave "secret" nem a "service_role".
+  SUPABASE_URL: "https://vvbvurgbeheedfuenawy.supabase.co",
+  SUPABASE_PUBLISHABLE_KEY: "sb_publishable_--mOgpWqCLK-jD2rJPMyNw_dnVTE6iN",
+  SUPABASE_TABELA: "leads_portfolio",
+
+  // Só para os outros serviços (formspree, googlescript, generico). Com "supabase" pode ficar vazio.
+  FORM_ENDPOINT: "",
 
   /* ------------------------------------------------------------------
      4) LIGA / DESLIGA

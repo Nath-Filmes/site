@@ -1,0 +1,9 @@
+{
+  "name": "site-nath-filmes",
+  "private": true,
+  "description": "Site estático da Nath Filmes. O formulário do portfólio grava no Supabase.",
+  "dependencies": {
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.119.0"
+  }
+}
