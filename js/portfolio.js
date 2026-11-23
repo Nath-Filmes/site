@@ -189,6 +189,197 @@
     }, function (e) { t.limpar(); throw e; });
   }
 
+  /* ---------- StoryMaker: bolinhas com anel + visualizador estilo "stories do Instagram" ---------- */
+  var SOM_LIGADO = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>';
+  var SOM_DESLIGADO = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>';
+
+  function montarStories(itens) {
+    var lista = document.createElement('ul');
+    lista.className = 'stories';
+    var botoes = [];
+    itens.forEach(function (item, i) {
+      var rotulo = item.tipo || 'Story';
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'story';
+      b.setAttribute('aria-label', 'Assistir ao story: ' + rotulo);
+      var anel = document.createElement('span');
+      anel.className = 'story__anel';
+      var capa = document.createElement('span');
+      capa.className = 'story__capa';
+      if (item.poster) {
+        var img = new Image();
+        img.src = item.poster; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+        capa.appendChild(img);
+      } else {
+        capa.innerHTML = NF.ico('filme');
+      }
+      anel.appendChild(capa);
+      var nome = document.createElement('span');
+      nome.className = 'story__nome';
+      nome.textContent = rotulo;
+      b.appendChild(anel);
+      b.appendChild(nome);
+      b.addEventListener('click', function () { abrirStories(itens, i, botoes); });
+      botoes.push(b);
+      li.appendChild(b);
+      lista.appendChild(li);
+    });
+    return lista;
+  }
+
+  var visualizador = null;
+  function abrirStories(itens, inicio, botoes) {
+    if (!visualizador) visualizador = criarStories();
+    visualizador.abrir(itens, inicio, botoes);
+  }
+
+  function criarStories() {
+    var dlg = document.createElement('dialog');
+    dlg.className = 'sv';
+    dlg.setAttribute('aria-label', 'Stories do StoryMaker');
+    dlg.innerHTML =
+      '<div class="sv__palco">' +
+        '<div class="sv__barras" aria-hidden="true"></div>' +
+        '<div class="sv__topo">' +
+          '<span class="sv__marca"><img src="assets/logo/logo-branco.png" alt="Nath Filmes"><span class="sv__rotulo"></span></span>' +
+          '<button class="sv__btn sv__som" type="button" hidden></button>' +
+          '<button class="sv__btn sv__fechar" type="button" aria-label="Fechar os stories">' + NF.ico('fechar') + '</button>' +
+        '</div>' +
+        '<div class="sv__midia"></div>' +
+        '<button class="sv__zona sv__zona--esq" type="button" aria-label="Story anterior"></button>' +
+        '<button class="sv__zona sv__zona--dir" type="button" aria-label="Próximo story"></button>' +
+      '</div>';
+    document.body.appendChild(dlg);
+
+    var barras = dlg.querySelector('.sv__barras');
+    var midia = dlg.querySelector('.sv__midia');
+    var rotuloEl = dlg.querySelector('.sv__rotulo');
+    var btnSom = dlg.querySelector('.sv__som');
+    var e = { itens: [], i: 0, botoes: [], origem: null, raf: 0, v: null, dur: 0, decorrido: 0, ultimo: 0, pausado: false, semSom: false, hold: 0, segurou: false, aberto: false, barra: null };
+
+    function atualizarSom() {
+      btnSom.innerHTML = e.semSom ? SOM_DESLIGADO : SOM_LIGADO;
+      btnSom.setAttribute('aria-label', e.semSom ? 'Ligar o som' : 'Desligar o som');
+    }
+
+    function parar() {
+      cancelAnimationFrame(e.raf);
+      e.raf = 0;
+      if (e.v) { try { e.v.pause(); } catch (x) { /* ok */ } e.v = null; }
+      midia.innerHTML = '';
+    }
+
+    // a barrinha da vez enche enquanto o story passa; as anteriores ficam cheias
+    function tick(t) {
+      if (!e.aberto) return;
+      var p;
+      if (e.v) p = e.v.duration ? e.v.currentTime / e.v.duration : 0;
+      else if (e.dur) { if (!e.pausado) e.decorrido += t - e.ultimo; p = e.decorrido / e.dur; }
+      else { e.barra.style.width = '100%'; return; } // vídeo de fora (YouTube/Vimeo): a pessoa toca para avançar
+      e.ultimo = t;
+      e.barra.style.width = Math.min(100, p * 100) + '%';
+      if (!e.v && p >= 1) { proximo(); return; }
+      e.raf = requestAnimationFrame(tick);
+    }
+
+    function mostrar(n) {
+      parar();
+      e.i = n;
+      var item = e.itens[n] || {};
+      var is = barras.querySelectorAll('i');
+      for (var j = 0; j < is.length; j++) is[j].style.width = j < n ? '100%' : '0%';
+      e.barra = is[n];
+      rotuloEl.textContent = item.tipo || '';
+      if (e.botoes[n]) e.botoes[n].classList.add('story--vista');
+      e.pausado = false; e.decorrido = 0; e.dur = 0; e.ultimo = performance.now();
+      btnSom.hidden = true;
+
+      if (item.arquivo) {
+        var v = document.createElement('video');
+        v.playsInline = true;
+        v.setAttribute('playsinline', '');
+        v.muted = e.semSom;
+        v.preload = 'auto'; // só o story da vez é baixado
+        if (item.poster) v.poster = item.poster;
+        v.src = item.arquivo;
+        v.addEventListener('ended', proximo);
+        midia.appendChild(v);
+        e.v = v;
+        btnSom.hidden = false;
+        atualizarSom();
+        var tentativa = v.play();
+        if (tentativa && tentativa.catch) tentativa.catch(function () { v.muted = true; e.semSom = true; atualizarSom(); v.play().catch(function () { /* ok */ }); });
+      } else if (item.youtube || item.vimeo) {
+        var f = document.createElement('iframe');
+        f.title = item.tipo || 'Story';
+        f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+        f.setAttribute('allowfullscreen', '');
+        f.src = item.youtube
+          ? 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(item.youtube) + '?autoplay=1&rel=0&playsinline=1'
+          : 'https://player.vimeo.com/video/' + String(item.vimeo) + (String(item.vimeo).indexOf('?') > -1 ? '&' : '?') + 'autoplay=1&dnt=1';
+        midia.appendChild(f);
+      } else {
+        // ainda sem vídeo: espaço reservado por 5 segundos, depois passa para o próximo
+        var caixa = document.createElement('div');
+        caixa.className = 'slot slot--escuro';
+        caixa.innerHTML = NF.reservado(item.tipo || 'Story', 'video');
+        midia.appendChild(caixa);
+        e.dur = 5000;
+      }
+      e.raf = requestAnimationFrame(tick);
+    }
+
+    function proximo() { if (e.i < e.itens.length - 1) mostrar(e.i + 1); else dlg.close(); }
+    function anterior() { mostrar(Math.max(0, e.i - 1)); }
+    function pausar() { e.pausado = true; if (e.v) e.v.pause(); }
+    function retomar() { if (!e.pausado) return; e.pausado = false; e.ultimo = performance.now(); if (e.v) e.v.play().catch(function () { /* ok */ }); }
+
+    // toque rápido avança ou volta; segurar o dedo pausa (como no Instagram)
+    function ligarZona(botao, acao) {
+      botao.addEventListener('pointerdown', function () {
+        e.segurou = false;
+        clearTimeout(e.hold);
+        e.hold = setTimeout(function () { e.segurou = true; pausar(); }, 300);
+      });
+      function soltar() { clearTimeout(e.hold); if (e.segurou) retomar(); }
+      botao.addEventListener('pointerup', soltar);
+      botao.addEventListener('pointerleave', soltar);
+      botao.addEventListener('pointercancel', soltar);
+      botao.addEventListener('keydown', function () { e.segurou = false; });
+      botao.addEventListener('click', function () { if (e.segurou) { e.segurou = false; return; } acao(); });
+    }
+    ligarZona(dlg.querySelector('.sv__zona--esq'), anterior);
+    ligarZona(dlg.querySelector('.sv__zona--dir'), proximo);
+
+    dlg.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowRight') { ev.preventDefault(); proximo(); }
+      else if (ev.key === 'ArrowLeft') { ev.preventDefault(); anterior(); }
+    });
+    btnSom.addEventListener('click', function () { e.semSom = !e.semSom; if (e.v) e.v.muted = e.semSom; atualizarSom(); });
+    dlg.querySelector('.sv__fechar').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (ev) { if (ev.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', function () {
+      e.aberto = false;
+      parar();
+      if (e.origem && e.origem.focus) e.origem.focus();
+    });
+
+    return {
+      abrir: function (itens, inicio, botoes) {
+        e.itens = itens;
+        e.botoes = botoes || [];
+        e.origem = e.botoes[inicio] || null;
+        e.aberto = true;
+        barras.innerHTML = '';
+        itens.forEach(function () { var s = document.createElement('span'); s.appendChild(document.createElement('i')); barras.appendChild(s); });
+        if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+        mostrar(inicio);
+      }
+    };
+  }
+
   /* ---------- liberar o portfólio completo ---------- */
   var completoCarregado = false;
   function mostrarCompleto(foco) {
@@ -241,12 +432,23 @@
           }
           cab.appendChild(rotulo);
           cab.appendChild(h);
+          if (s.dica) {
+            var dica = document.createElement('p');
+            dica.className = 'p-secao__dica';
+            dica.textContent = s.dica;
+            cab.appendChild(dica);
+          }
           sec.appendChild(cab);
         }
-        var g = document.createElement('div');
-        g.className = 'p-grade';
-        (s.itens || []).forEach(function (item, i) { g.appendChild(NF.cartaoPortfolio(item, { atraso: ((i % 3) * .1) + 's' })); });
-        sec.appendChild(g);
+        if (s.estilo === 'stories') {
+          // StoryMaker: bolinhas com anel que abrem o visualizador em tela cheia, como os stories do Instagram
+          sec.appendChild(montarStories(s.itens || []));
+        } else {
+          var g = document.createElement('div');
+          g.className = 'p-grade';
+          (s.itens || []).forEach(function (item, i) { g.appendChild(NF.cartaoPortfolio(item, { atraso: ((i % 3) * .1) + 's' })); });
+          sec.appendChild(g);
+        }
         grade.appendChild(sec);
       });
       NF.revelar(grade);

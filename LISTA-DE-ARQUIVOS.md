@@ -95,6 +95,8 @@ Dividido em **duas seções por modalidade**, com 8 vídeos em cada (os rótulos
 - **StoryMaker:** Bodas de esmeralda (making of, cerimônia e festa) · Cerimônia · Pré wedding, making of, cerimônia e festa (2 vezes) · Cerimônia e festa · Pré wedding · Cerimônia (2 vezes).
 
 Para cada vídeo: o `.mp4` (`assets/video/`), a capa `.jpg` (`assets/posters/`) e, se quiser, uma prévia `-previa.mp4`. Enquanto o vídeo não chega, o cartão aparece como espaço reservado.
+- **StoryMaker** aparece como stories do Instagram (bolinhas com anel que abrem em tela cheia). Cada vídeo: vertical 9:16, curto, H.264 + AAC, 720×1280, até uns 5 MB. A capa vira a foto da bolinha.
+- **FilmMaker** (7 a 20 min): vídeo longo demais para ir dentro do site. Publique como “Não listado” no YouTube ou Vimeo e me passe o código/link.
 **Dica de proteção:** em vez de arquivos `.mp4`, publique como **“Não listado”** no YouTube ou Vimeo e coloque só o código no JSON (campos `youtube` ou `vimeo`). Aí só precisa da capa `casal-04.jpg`.
 
 Onde escrever: `data/portfolio-aberto.json` (exemplos abertos e Home) e `data/portfolio-completo.json`.

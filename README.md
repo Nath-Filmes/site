@@ -106,6 +106,10 @@ Os 3 vídeos da seção da página inicial têm lista própria (mexer no Portfó
 ### Portfólio completo: `data/portfolio-completo.json`
 Esta lista **só é baixada depois que a pessoa preenche o formulário**. Ela é dividida em **duas seções, uma por modalidade**: “FilmMaker mobile” e “StoryMaker” (8 cartões em cada, com os rótulos que a Nath definiu, como “Cerimônia e festa” ou “Pré wedding, making of, cerimônia e festa”). Cada seção tem `titulo`, `destaque` (palavra em itálico), `rotulo` e a lista de `itens`; cada item usa os mesmos campos dos cartões acima (`tipo`, `poster`, `arquivo`/`youtube`/`vimeo`...). Enquanto um cartão não tiver vídeo, ele aparece como espaço reservado.
 
+**StoryMaker em estilo stories do Instagram:** a seção StoryMaker tem `"estilo": "stories"`. Em vez de uma grade, aparecem bolinhas com anel (como os destaques do Instagram). Tocar em uma abre o visualizador em tela cheia: as barrinhas no topo mostram o progresso, o toque à direita avança, à esquerda volta, segurar pausa, e o story seguinte entra sozinho quando o vídeo termina. O anel fica cinza depois de assistir. Para voltar a uma grade comum, apague a linha `"estilo": "stories"`.
+- Vídeos de story: curtos, na vertical (9:16), em H.264 com som AAC, de preferência 720×1280 e até uns 5 MB cada. Só o story que está passando é baixado.
+- Vídeos longos (como os do FilmMaker, de 7 a 20 minutos) **não** devem ir como `.mp4` dentro do site: publique como “Não listado” no YouTube ou no Vimeo e use os campos `youtube` ou `vimeo`.
+
 ### Depoimentos: `data/depoimentos.json`
 Aceita print de WhatsApp (`"tipo": "print"` + `"imagem"`) ou texto (`"tipo": "texto"`). **Só publique com autorização de cada cliente.** Os itens `"tipo": "reservado"` são os espaços reservados.
 
