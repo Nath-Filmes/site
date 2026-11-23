@@ -124,6 +124,8 @@ window.SITE_CONFIG = {
     "nath-oval":          { src: "assets/img/nath-oval.jpg", alt: "Nath sorrindo, sentada, segurando o celular" },
     "nath-lateral":       { src: "assets/video/nath-lateral.mp4", poster: "assets/posters/nath-lateral.jpg", alt: "Nath filmando um casal que dança em um jardim" },
     // As "Histórias recentes" (3 cartões de casais) são editadas em data/portfolio-aberto.json
+    // Sem vídeo por enquanto: enquanto src estiver vazio, este espaço NÃO aparece na página Empresas (o texto fica sozinho).
+    // Quando o vídeo chegar, coloque em assets/video/ e preencha src (e poster, alt): ele aparece sozinho ao lado do texto.
     "empresas-video":     { src: "", srcMobile: "", poster: "", alt: "" },
     "depoimentos-foto":   { src: "assets/img/depoimentosfotonoiva.jpg", alt: "Noiva de vestido branco e óculos de coração escrito “CASEI” rindo ao assistir ao vídeo do casamento no celular, ao lado de uma convidada" },
 

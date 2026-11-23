@@ -402,6 +402,13 @@ body.menu-aberto { overflow: hidden; }
   .emp__painel { padding-left: max(var(--margem), calc((100vw - var(--larg-max)) / 2 + var(--margem))); }
   .emp__midia .slot { --ar: auto; }
 }
+/* Sem o vídeo institucional (por enquanto): a coluna do vídeo some e o painel vinho ocupa a largura toda, com o texto centralizado */
+.emp__midia.sem-foto { display: none; }
+.emp.sem-foto .emp__grid { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+.emp.sem-foto .emp__painel { align-items: center; text-align: center; padding-inline: var(--margem); }
+.emp.sem-foto .emp__painel > div { margin-inline: auto; }
+.emp.sem-foto .emp__servicos li { text-align: left; }
+@media (min-width: 900px) { .emp.sem-foto .emp__grid { min-height: min(720px, calc(100svh - var(--h-topo))); } }
 
 /* 11.8 Depoimentos */
 .dep { position: relative; isolation: isolate; overflow: hidden; background: #0f0d0d; color: var(--creme); }

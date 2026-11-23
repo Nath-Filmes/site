@@ -63,7 +63,7 @@ Sem fotos fixas. A abertura da página é só o fundo preto com o texto (a foto 
 | ✅ | `hero-video.mp4` | `assets/video/` | Primeira tela da Home (computador) | 16 s, 1280×720, 2,9 MB, sem áudio |
 | — | `hero-video-vertical.mp4` | `assets/video/` | **Não é mais usado.** O vídeo horizontal vale também para o celular (o site corta as laterais). Pode apagar este arquivo. | 9,6 s, 720×1280 |
 | ✅ | `hero-video.jpg` | `assets/posters/` | Capa da primeira tela | **Já gerei a partir do seu vídeo**, não precisa enviar |
-| ☐ | `empresas-video.mp4` | `assets/video/` | Página “Empresas” (`empresas.html`, **virá depois**) | Curto, sem áudio, horizontal |
+| ☐ | `empresas-video.mp4` | `assets/video/` | Página “Empresas” (`empresas.html`, **virá depois**). Enquanto não chegar, o espaço **some da página** e o texto fica sozinho | Curto, sem áudio, horizontal |
 | ☐ | `empresas-video.jpg` | `assets/posters/` | Capa do vídeo de empresas | Imagem |
 
 Onde escrever: `site.config.js`, espaços `"hero-video"` (`src`, `poster`) e `"empresas-video"`.
@@ -84,7 +84,7 @@ Para cada vídeo: o `.mp4` em `assets/video/`, a capa `.jpg` com o **mesmo nome*
 | Casamentos | Cerimônia | ✅ `cerimonia.mp4` (81 s, 17 MB: só carrega quando a pessoa clica) |
 | Casamentos | Festa | ✅ `festa.mp4` (o certo, que veio de `festa certo.mp4`; 52 s, 8,8 MB) |
 | Trends | 3 vídeos | ✅ `trend-1.mp4`, `trend-2.mp4`, `trend-3.mp4` |
-| Empresas | 3 vídeos (depois) | Sem espaços reservados: por enquanto a aba mostra só o botão “Solicitar orçamento e portfólio” (WhatsApp). Com vídeo pronto, a grade volta sozinha |
+| Empresas | 3 vídeos (depois) | **Aba retirada por enquanto** (a pedido da Nath). Para voltar, é só reativar o botão no `portfolio.html` (está comentado); enquanto não houver vídeo, a aba mostra só o botão “Solicitar orçamento e portfólio” |
 
 ### “Histórias recentes” da Página inicial
 Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa `exemplo1.mp4` (pré wedding), `exemplo2.mp4` (save the date) e `exemplo3.mp4` (making of), como estava antes, com as capas enviadas pela Nath: `home-historia-1.jpg` (pré wedding), `home-historia-2.jpg` (save the date) e `home-historia-3.jpg` (making of da noiva).

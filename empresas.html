@@ -52,7 +52,9 @@
         </div>
       </div>
       <div class="emp__midia">
-        <div class="slot slot--escuro" data-slot="empresas-video" data-tipo="video" data-legenda="Vídeo institucional curto (virá depois)"></div>
+        <!-- data-ocultar-vazio: enquanto "empresas-video" não tiver vídeo em site.config.js (campo src), este espaço some
+             da página e o texto fica sozinho. Quando o vídeo entrar, ele volta sozinho ao lado do texto. -->
+        <div class="slot slot--escuro" data-slot="empresas-video" data-tipo="video" data-ocultar-vazio data-legenda="Vídeo institucional curto (virá depois)"></div>
       </div>
     </div>
   </section>

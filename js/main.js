@@ -136,6 +136,8 @@
       // Quando o arquivo entrar em site.config.js (campo src), a foto aparece sozinha.
       el.hidden = true;
       if (el.parentElement) el.parentElement.classList.add('sem-foto');
+      var secao = el.closest('section');
+      if (secao) secao.classList.add('sem-foto');
     } else {
       el.insertAdjacentHTML('beforeend', reservado(legenda, tipo, nome));
     }
