@@ -43,10 +43,9 @@ Use preferencialmente luz natural. O site **não altera as cores** das suas foto
 | ✅ | `nath-lateral` | Home, apresentação (só no computador) | **Já é um vídeo curto** (`assets/video/nath-lateral.mp4`) |
 | — | `exp-story-1/2`, `exp-film-1/2` | Não são mais usadas na Home | Fotos guardadas em `assets/img/guardadas/` |
 | ✅ | `depoimentos-foto` (arquivo `depoimentosfotonoiva.jpg`) | Home, depoimentos: foto da Nath com a noiva vendo o vídeo e sorrindo | Quadrada ou 4:5 (cantos arredondados, sem escurecer) |
-| ☐ | `experiencia-hero` | Experiência, abertura | Horizontal, grande (o site escurece por cima) |
 | ✅ | `sobre-hero` | Sobre, abertura (metade direita) | Já enviada (você sorrindo, vista na tela de uma câmera). |
 | ✅ | `negativo-1` a `negativo-4` | Sobre, tira de negativo | Já enviadas (do seu zip `fotos minhas.zip`; a 5ª foto, a da noiva com óculos “CASEI”, ficou de fora porque já está na Home) |
-| ☐ | `equipe-irmao` | Sobre, equipe | **Foto do Gustavo, seu irmão**, vertical 4:5 (colorida). Você vai enviar depois. |
+| ☐ | `equipe-irmao` | Sobre, equipe | **Foto do seu irmão**, vertical 4:5 (colorida). Você vai enviar depois. O nome dele não aparece no site. |
 
 ---
 
@@ -66,7 +65,7 @@ Não coloquei nenhum depoimento, nome de casal, número, prêmio ou veiculação
 | ✔ | O que | Onde |
 |---|---|---|
 | ☐ | **Nomes ou iniciais dos casais** (só com autorização) | campo `titulo` em `data/portfolio-aberto.json` e `portfolio-completo.json` |
-| ✅ | **Nome do seu irmão:** Gustavo | `sobre.html`, bloco “A equipe” |
+| ✅ | **Nome do seu irmão:** tirado do site a seu pedido (o bloco “A equipe” diz só “Meu irmão”) | `sobre.html`, bloco “A equipe” |
 | ☐ | Link do **Instagram separado para os institucionais** (quando criar) | Pode virar um botão na página Empresas (`empresas.html`) |
 
 ---

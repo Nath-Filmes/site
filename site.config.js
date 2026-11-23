@@ -131,9 +131,6 @@ window.SITE_CONFIG = {
     "negativo-2":         { src: "assets/img/negativo-2.jpg", alt: "Nath de perfil, filmando com o celular, com um rádio comunicador na cintura" },
     "negativo-3":         { src: "assets/img/negativo-3.jpg", alt: "Nath de costas filmando uma cerimônia com o celular, ao lado de um arranjo de flores secas" },
     "negativo-4":         { src: "assets/img/negativo-4.jpg", alt: "Nath sorrindo, segurando o celular com uma luz de vídeo acoplada" },
-    "equipe-irmao":       { src: "", alt: "" },
-
-    /* ---- EXPERIÊNCIA ---- */
-    "experiencia-hero":   { src: "", alt: "" }
+    "equipe-irmao":       { src: "", alt: "" }
   }
 };

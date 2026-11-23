@@ -49,12 +49,10 @@ Não são mais usados: `hero-video-vertical.mp4` e as fotos de `assets/img/guard
 | ✅ | `negativo-2.jpg` | Tira de negativo, quadro 2 | Já enviada (de perfil filmando) |
 | ✅ | `negativo-3.jpg` | Tira de negativo, quadro 3 | Já enviada (filmando a cerimônia) |
 | ✅ | `negativo-4.jpg` | Tira de negativo, quadro 4 | Já enviada (sorrindo com a luz de vídeo) |
-| ☐ | `equipe-irmao.jpg` | Equipe, **foto do Gustavo, seu irmão** (vai ser enviada depois) | Vertical 4:5 (colorida) |
+| ☐ | `equipe-irmao.jpg` | Equipe, **foto do seu irmão** (vai ser enviada depois; o nome dele não aparece no site) | Vertical 4:5 (colorida) |
 
 ### Experiência
-| ✔ | Arquivo | Onde aparece | Formato |
-|---|---|---|---|
-| ☐ | `experiencia-hero.jpg` | Fundo da abertura da página | Horizontal grande 16:9 (o site escurece) |
+Sem fotos fixas. A abertura da página é só o fundo preto com o texto (a foto grande foi retirada a pedido da Nath).
 
 ---
 
@@ -113,7 +111,7 @@ Onde escrever: `data/depoimentos.json` (cada item com `"tipo": "print"` e `"imag
 ---
 
 ## Resumo da contagem
-- **Fotos fixas:** 13 (6 na Home, contando as 4 do carrossel, 6 em Sobre, 1 em Experiência). Do Sobre falta só `equipe-irmao` (foto do Gustavo).
+- **Fotos fixas:** 12 (6 na Home, contando as 4 do carrossel, e 6 em Sobre). Do Sobre falta só `equipe-irmao` (foto do seu irmão).
 - **Vídeos fixos:** 2 versões do vídeo da primeira tela + 1 vídeo de empresas (depois), com 2 capas
 - **Vídeos de casais:** 3 para a Home e exemplos abertos, mais pelo menos 6 para o portfólio completo
 - **Prints de depoimento:** 3 ou mais

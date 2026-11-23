@@ -197,7 +197,7 @@ p + p { margin-top: 1em; }
 
 .topo-menu { position: fixed; inset: var(--h-topo) 0 0 0; z-index: 55; background: var(--preto); color: var(--creme); display: flex; flex-direction: column; justify-content: space-between; padding: 32px var(--margem) calc(32px + env(safe-area-inset-bottom)); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity .3s, transform .3s var(--suave), visibility .3s; }
 .topo-menu.aberto { opacity: 1; visibility: visible; transform: none; }
-.topo-menu nav a { display: block; font: 600 clamp(2rem, 9vw, 3rem)/1 var(--f-serif); text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid var(--linha-clara); }
+.topo-menu nav a { display: block; font: 600 clamp(1.5rem, 6vw, 2.1rem)/1 var(--f-serif); text-transform: uppercase; padding: 13px 0; border-bottom: 1px solid var(--linha-clara); }
 .topo-menu nav a[aria-current="page"] { font-style: italic; text-transform: none; color: var(--cinza-claro); }
 .topo-menu .btn { width: 100%; margin-top: 28px; }
 body.menu-aberto { overflow: hidden; }
@@ -223,10 +223,10 @@ body.menu-aberto { overflow: hidden; }
 @media (min-width: 800px) { .rodape__grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 64px; } }
 
 /* ---------- 08 WHATSAPP FLUTUANTE ---------- */
-.wa-flutuante { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 45; display: flex; align-items: center; gap: 0; height: 58px; min-width: 58px; background: var(--vinho); color: var(--creme); border-radius: 29px; box-shadow: 0 0 0 2px var(--creme), 0 12px 28px rgba(20, 18, 18, .35); transition: transform .3s var(--suave), background .3s; overflow: hidden; }
-.wa-flutuante:hover { transform: translateY(-3px); background: #7d0513; }
+.wa-flutuante { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 45; display: flex; align-items: center; gap: 0; height: 58px; min-width: 58px; background: #25d366; color: #fff; border-radius: 29px; box-shadow: 0 0 0 2px var(--creme), 0 12px 28px rgba(20, 18, 18, .35); transition: transform .3s var(--suave), background .3s; overflow: hidden; }
+.wa-flutuante:hover { transform: translateY(-3px); background: #1fb855; } /* verde do WhatsApp */
 .wa-flutuante svg { width: 28px; height: 28px; margin: 0 15px; flex: none; }
-.wa-flutuante span { max-width: 0; opacity: 0; white-space: nowrap; font: 600 .7rem/1 var(--f-sans); letter-spacing: .14em; text-transform: uppercase; transition: max-width .4s var(--suave), opacity .3s, padding .4s; }
+.wa-flutuante span { color: var(--preto); max-width: 0; opacity: 0; white-space: nowrap; font: 600 .7rem/1 var(--f-sans); letter-spacing: .14em; text-transform: uppercase; transition: max-width .4s var(--suave), opacity .3s, padding .4s; }
 @media (min-width: 960px) { .wa-flutuante:hover span, .wa-flutuante:focus-visible span { max-width: 220px; opacity: 1; padding-right: 22px; } }
 
 /* ---------- 09 ESPAÇOS DE MÍDIA (fotos, vídeos e reservados) ---------- */
@@ -313,6 +313,10 @@ body.menu-aberto { overflow: hidden; }
 .amor__slide .slot { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
 .amor__pausa { position: absolute; right: 12px; top: 12px; z-index: 3; width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--raio-btn); border: 1.5px solid rgba(255, 251, 245, .75); background: rgba(20, 18, 18, .5); color: var(--creme); font-size: .66rem; transition: background .3s; }
 .amor__pausa:hover { background: rgba(20, 18, 18, .8); }
+/* Celular e tablet: o título sempre quebra em duas linhas ("ONDE O" / "AMOR VIRA filme").
+   Em uma linha só, a palavra "filme" (que fica pendurada à direita) era cortada pela borda
+   da tela em celulares mais largos (a partir de uns 425 px) e esbarrava na câmera. */
+@media (max-width: 899px) { .amor__titulo { max-width: 6.4em; } }
 @media (min-width: 900px) {
   .amor__grid { grid-template-columns: 1.1fr 1fr; gap: clamp(72px, 8vw, 120px); align-items: center; }
   .amor__fotos { margin: 0 0 0 auto; max-width: 460px; } /* afastada do texto para a palavra "filme" não encostar na foto */
@@ -501,11 +505,11 @@ body.menu-aberto { overflow: hidden; }
 .equipe__grid { display: grid; gap: 40px; align-items: center; }
 .equipe .slot { --ar: 4 / 5; max-width: 380px; }
 .equipe__texto { max-width: 520px; }
-.equipe__nome { font-family: var(--f-serif); font-style: italic; font-weight: 600; font-size: clamp(2.8rem, 8vw, 3.8rem); color: var(--vinho); margin: 4px 0 16px; line-height: 1; letter-spacing: .01em; } /* nome em letra clara e grossa para ler fácil */
+.equipe__texto .titulo { margin-bottom: 20px; } /* respiro entre o título e o texto (antes o nome ficava no meio) */
 @media (min-width: 800px) { .equipe__grid { grid-template-columns: minmax(260px, 380px) 1fr; gap: clamp(48px, 8vw, 110px); } }
 
 /* ---------- 13 EXPERIÊNCIA ---------- */
-.x-hero { position: relative; isolation: isolate; text-align: center; padding-block: clamp(80px, 12vw, 150px); min-height: clamp(560px, 78svh, 760px); display: flex; flex-direction: column; justify-content: center; }
+.x-hero { position: relative; isolation: isolate; background: var(--preto); text-align: center; padding-block: clamp(80px, 12vw, 150px); min-height: clamp(560px, 78svh, 760px); display: flex; flex-direction: column; justify-content: center; }
 .x-hero .titulo { max-width: 15ch; margin-inline: auto; }
 .x-hero .lead { margin: 28px auto 0; max-width: 34ch; color: var(--cinza-claro); }
 
