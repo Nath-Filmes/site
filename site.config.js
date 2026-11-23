@@ -59,7 +59,7 @@ window.SITE_CONFIG = {
 
   // Qual serviço você escolheu? Use um destes:
   //   "formspree"    → https://formspree.io/f/xxxxxxx
-  //   "netlify"      → deixe FORM_ENDPOINT vazio e publique na Netlify (veja README)
+  //   "netlify"      → só funciona se o site estiver na Netlify (NÃO funciona na Vercel)
   //   "googlescript" → https://script.google.com/macros/s/.../exec
   //   "generico"     → qualquer endereço que aceite um POST com JSON
   FORM_TIPO: "formspree",

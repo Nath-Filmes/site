@@ -1,0 +1,10 @@
+# Arquivos de uso interno: ficam no GitHub, mas não precisam ir para o site publicado.
+README.md
+CONTEUDO-PENDENTE.md
+LISTA-DE-ARQUIVOS.md
+abrir-site-local.bat
+tools/
+assets/img/guardadas/
+assets/img/LEIA-ME.txt
+assets/posters/LEIA-ME.txt
+assets/video/LEIA-ME.txt

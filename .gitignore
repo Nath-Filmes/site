@@ -11,6 +11,9 @@ desktop.ini
 __pycache__/
 *.pyc
 
+# Pasta que o programa da Vercel cria no computador (não vai para o GitHub)
+.vercel/
+
 # Editores
 .vscode/
 .idea/

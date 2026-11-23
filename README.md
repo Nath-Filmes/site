@@ -130,7 +130,7 @@ FORM_ENDPOINT: "https://....",   // endereço do serviço
 FORM_TIPO: "formspree",          // "formspree", "netlify", "googlescript" ou "generico"
 ```
 
-Enquanto `FORM_ENDPOINT` estiver vazio, o formulário funciona em **modo de teste**: ele libera o portfólio, mas **não envia nada** (aparece um aviso discreto na tela e no console do navegador). Antes de divulgar o site, configure uma das opções abaixo.
+Enquanto `FORM_ENDPOINT` estiver vazio, o formulário funciona em **modo de teste**: ele libera o portfólio, mas **não envia nada** (aparece o aviso “Modo de teste” na tela e no console do navegador). **Antes de divulgar o site, configure uma das opções abaixo**; senão o contato de quem preencher se perde. Na Vercel, use a opção A (Formspree) ou a C (Google Apps Script).
 
 ### Opção A: Formspree (a mais simples)
 1. Crie uma conta em formspree.io e clique em *New form*.
@@ -138,7 +138,7 @@ Enquanto `FORM_ENDPOINT` estiver vazio, o formulário funciona em **modo de test
 3. Cole em `FORM_ENDPOINT` e deixe `FORM_TIPO: "formspree"`.
 4. Os contatos chegam no seu e-mail e ficam no painel do Formspree.
 
-### Opção B: Netlify Forms (se for publicar na Netlify)
+### Opção B: Netlify Forms (⚠️ só funciona se o site estiver na Netlify; **não funciona na Vercel**)
 1. Deixe `FORM_ENDPOINT: ""` e troque para `FORM_TIPO: "netlify"`.
 2. Publique o site na Netlify (seção 10). O formulário já está pronto no `portfolio.html` (`data-netlify="true"`).
 3. No painel da Netlify, abra *Forms* para ver os contatos e ative o aviso por e-mail em *Form notifications*.
@@ -181,9 +181,14 @@ Em `site.config.js`:
 
 ## 9. Domínio e Google (SEO)
 
-Enquanto o domínio não existe, os arquivos usam o endereço de exemplo **`SEU-DOMINIO.com.br`**. Quando comprar o domínio, troque em todos os arquivos de uma vez:
-1. No VS Code, use **Ctrl + Shift + H** (Localizar e substituir em todos os arquivos).
-2. Procure `SEU-DOMINIO.com.br` e substitua pelo endereço real (ex.: `www.nathfilmes.com.br`).
+Enquanto o endereço real não existe, os arquivos usam o endereço de exemplo **`SEU-DOMINIO.com.br`**. Quando o site estiver no ar (primeiro no endereço da Vercel, depois no domínio próprio), troque em todos os arquivos de uma vez, no terminal, dentro da pasta do site:
+
+```
+python tools/trocar-dominio.py nath-filmes.vercel.app
+python tools/trocar-dominio.py www.nathfilmes.com.br
+```
+
+O programa descobre sozinho qual endereço estava valendo, então pode rodar de novo quando o domínio próprio ficar pronto. Depois é só publicar de novo (commit e envio ao GitHub).
 
 Isso atualiza os endereços das páginas (`canonical`), as prévias de compartilhamento (WhatsApp, Instagram), os dados estruturados do Google (LocalBusiness), o `sitemap.xml` e o `robots.txt`.
 
@@ -193,7 +198,20 @@ Depois de publicar, cadastre o site no **Google Search Console** e envie o `site
 
 ## 10. Como publicar (passo a passo)
 
-Escolha **uma** opção. As três têm plano gratuito.
+Escolha **uma** opção.
+
+### Vercel (a que a Nath vai usar, ligada ao GitHub)
+O site já vem com o `vercel.json` (cabeçalhos de segurança, cache das fotos e vídeos e bloqueio dos arquivos de uso interno) e o `.vercelignore`. Não precisa instalar nada nem montar o site.
+1. Entre em **vercel.com** e vá em *Add New → Project*.
+2. Em *Import Git Repository*, escolha **Nath-Filmes/site**. Se o repositório não aparecer, clique em *Adjust GitHub App Permissions* e libere a organização `Nath-Filmes` (quem é dono da organização precisa aprovar).
+3. Em *Framework Preset* deixe **Other**. Deixe **vazios** *Build Command*, *Output Directory* e *Install Command*. Clique em **Deploy**.
+4. Depois disso, **todo envio ao GitHub na ramificação `main` publica o site sozinho** (leva cerca de 1 minuto). Envios em outras ramificações geram um endereço de teste.
+5. Domínio próprio: no projeto, *Settings → Domains → Add* e siga as instruções de DNS.
+6. Troque o endereço de exemplo pelo real (seção 9) e configure o formulário (seção 7).
+
+Confira depois de publicar:
+- Abra `seu-endereco.vercel.app/README.md` e `/tools/trocar-dominio.py`: o esperado é voltar para a página inicial. Se aparecer o texto do arquivo, avise para ajustarmos.
+- Atenção ao plano: os termos de uso da Vercel dizem que o plano **Hobby (gratuito) é só para uso pessoal ou não comercial**. O site de um negócio pode precisar do plano pago (Pro). Confirme com a Vercel antes de divulgar.
 
 ### Netlify (a mais fácil)
 1. Entre em **app.netlify.com/drop** (crie uma conta grátis).
