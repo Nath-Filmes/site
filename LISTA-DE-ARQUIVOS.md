@@ -20,7 +20,7 @@ Formatos: **foto** em JPG ou WebP, no máximo 1600 px no lado maior, de preferê
 - `amor-ouvir.jpg` (beijo na igrejinha azul), `amor-rever.jpg` (casal no parque), `amor-sentir.jpg` (casal rezando no altar): fotos do carrossel “Onde o amor vira filme”. O quadro “Reviver cada detalhe.” usa `amor-foto-moldura-1.jpg` (as alianças). As fotos que saíram (noiva ao microfone e convidada rindo) estão em `assets/img/guardadas/` (`amor-ouvir-microfone.jpg` e `amor-rever-risada.jpg`).
 - `depoimentosfotonoiva.jpg`: foto da Nath com a noiva.
 - `feedback1.webp` a `feedback5.webp`: os 5 depoimentos (prints de WhatsApp), **sem o fundo do chat**. Os originais estão em `assets/img/guardadas/feedbacks-originais/`.
-- `exemplo1.mp4`, `exemplo2.mp4`, `exemplo3.mp4`: vídeos de “Histórias recentes”. As capas (`assets/posters/exemplo1.jpg` a `exemplo3.jpg`) eu gerei a partir dos vídeos. O `exemplo2.mp4` estava em um formato (HEVC 10 bits) que muitos navegadores não tocam, então converti para H.264 (de 13 MB para 3,3 MB, mesma imagem e mesmo áudio).
+- `exemplo1.mp4`, `exemplo2.mp4`, `exemplo3.mp4`: vídeos de “Histórias recentes”. Na Home, as capas são as **fotos que a Nath enviou** (`assets/posters/home-historia-1.jpg` a `home-historia-3.jpg`, proporção 4:5, sem nenhuma edição). A página Portfólio continua usando `exemplo1.jpg` a `exemplo3.jpg`, que eu gerei a partir dos vídeos. O `exemplo2.mp4` estava em um formato (HEVC 10 bits) que muitos navegadores não tocam, então converti para H.264 (de 13 MB para 3,3 MB, mesma imagem e mesmo áudio).
 - `hero-video.mp4` e capa, `nath-oval.jpg`, `nath-lateral.mp4` e capa, logos, ícones e imagem de compartilhamento.
 
 Não são mais usados: `hero-video-vertical.mp4` e as fotos de `assets/img/guardadas/`.
@@ -87,7 +87,7 @@ Para cada vídeo: o `.mp4` em `assets/video/`, a capa `.jpg` com o **mesmo nome*
 | Empresas | 3 vídeos | ☐ 3 espaços reservados |
 
 ### “Histórias recentes” da Página inicial
-Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa `exemplo1.mp4` (pré wedding), `exemplo2.mp4` (save the date) e `exemplo3.mp4` (making of), como estava antes.
+Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa `exemplo1.mp4` (pré wedding), `exemplo2.mp4` (save the date) e `exemplo3.mp4` (making of), como estava antes, com as capas enviadas pela Nath: `home-historia-1.jpg` (pré wedding), `home-historia-2.jpg` (save the date) e `home-historia-3.jpg` (making of da noiva).
 
 ### Portfólio completo (liberado pelo formulário)
 Mínimo de 6 vídeos: `casal-04` a `casal-09`, com a mesma ideia (`casal-04.mp4`, `casal-04-previa.mp4`, `casal-04.jpg`).

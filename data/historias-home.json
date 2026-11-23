@@ -2,7 +2,7 @@
   "_como_editar": [
     "Estes são os 3 vídeos da seção 'Portfólio / Histórias recentes' da página inicial. Eles são independentes da página Portfólio: mexer lá não muda aqui.",
     "Cada item entre { } é um cartão. Na Home o cartão mostra só o vídeo e o 'Ver mais' (sem rótulo nem nome).",
-    "poster: imagem de capa, ex.: 'assets/posters/exemplo1.jpg' (o mesmo nome do vídeo, na pasta assets/posters).",
+    "poster: imagem de capa do cartão, na pasta assets/posters. O cartão tem proporção 4:5 (foto em pé). Hoje: home-historia-1.jpg (pré wedding), home-historia-2.jpg (save the date) e home-historia-3.jpg (making of), as fotos que a Nath enviou. Estas capas valem só para a Home; a página Portfólio usa as de nome exemplo1.jpg a exemplo3.jpg.",
     "arquivo / youtube / vimeo: o vídeo que abre ao clicar. Use UM deles: arquivo ('assets/video/exemplo1.mp4'), youtube (só o código) ou vimeo (só o número).",
     "previa: vídeo MUITO curto e leve (3 a 6 s, sem som) que fica rodando no cartão (opcional).",
     "formato: 'vertical' ou 'horizontal'. Só os 3 primeiros itens aparecem.",
@@ -12,7 +12,7 @@
     {
       "categoria": "casamento",
       "formato": "vertical",
-      "poster": "assets/posters/exemplo1.jpg",
+      "poster": "assets/posters/home-historia-1.jpg",
       "previa": "",
       "arquivo": "assets/video/exemplo1.mp4",
       "youtube": "",
@@ -21,7 +21,7 @@
     {
       "categoria": "casamento",
       "formato": "vertical",
-      "poster": "assets/posters/exemplo2.jpg",
+      "poster": "assets/posters/home-historia-2.jpg",
       "previa": "",
       "arquivo": "assets/video/exemplo2.mp4",
       "youtube": "",
@@ -30,7 +30,7 @@
     {
       "categoria": "casamento",
       "formato": "vertical",
-      "poster": "assets/posters/exemplo3.jpg",
+      "poster": "assets/posters/home-historia-3.jpg",
       "previa": "",
       "arquivo": "assets/video/exemplo3.mp4",
       "youtube": "",

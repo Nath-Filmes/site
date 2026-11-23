@@ -25,7 +25,7 @@ Marque ✅ conforme for resolvendo.
 | ✔ | O que | Onde entra |
 |---|---|---|
 | ✅ | **Vídeo da primeira tela** (computador + vertical + capas): **já está no site** | `site.config.js` → `midia` → `"hero-video"`. Os vídeos já estão sem a faixa de áudio. O 1º quadro do vídeo do computador mostra o nome do casal e a data; você confirmou que não há problema. |
-| ✅ | **3 vídeos curtos de casamento** (“Histórias recentes” da Home e exemplos abertos do Portfólio): **já estão no site** (`exemplo1.mp4` a `exemplo3.mp4`) | `data/historias-home.json` (Home) e `data/portfolio-aberto.json` (Portfólio). Falta, se quiser, o nome do casal (só com autorização) no campo `titulo` do Portfólio. |
+| ✅ | **3 vídeos curtos de casamento** (“Histórias recentes” da Home e exemplos abertos do Portfólio): **já estão no site** (`exemplo1.mp4` a `exemplo3.mp4`) | `data/historias-home.json` (Home) e `data/portfolio-aberto.json` (Portfólio). Falta, se quiser, o nome do casal (só com autorização) no campo `titulo` do Portfólio. As capas da Home agora são as suas fotos (`home-historia-1` a `3` em `assets/posters/`). |
 | ☐ | **Vídeo institucional para empresas** (página Empresas) | `site.config.js` → `"empresas-video"` |
 | ☐ | **Vídeos das abas do Portfólio:** faltam só os 3 de Empresas (espaços já reservados). Pré wedding, making of, cerimônia, festa e os 3 Trends já estão no site. | `data/portfolio-aberto.json` (`categoria` `"casamento"`, `"trend"` ou `"empresa"`) |
 | ☐ | **Vídeos do portfólio completo** (liberados pelo formulário) | `data/portfolio-completo.json` (de preferência como “Não listado” no YouTube ou Vimeo) |
