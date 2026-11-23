@@ -15,7 +15,7 @@ Feito só com HTML, CSS e JavaScript, **sem instalar nada e sem “build”**: d
 | `empresas.html` | Empresas e eventos (aberta pelo botão “Empresas” do menu) |
 | `sobre.html` | Sobre a Nath e a equipe |
 | `experiencia.html` | Modalidades e pacotes (sem valores) e pedido de orçamento |
-| `portfolio.html` | Exemplos disponíveis (abas Casamentos, Trends, Empresas) e portfólio completo (liberado pelo formulário) |
+| `portfolio.html` | Exemplos disponíveis (abas Casamentos e Trends) e portfólio completo (liberado pelo formulário, dividido em FilmMaker mobile e StoryMaker) |
 | `privacidade.html` | Política de privacidade em linguagem simples |
 | `404.html` | Página de “não encontrado” |
 | **`site.config.js`** | **Número do WhatsApp, links, mensagens, formulário, fotos e vídeos** |
@@ -93,7 +93,7 @@ Veja a tabela completa, com a página e a sugestão de formato de cada um, em `C
 
 ### Exemplos disponíveis (Portfólio) e “Histórias recentes” (Home): `data/portfolio-aberto.json`
 Cada bloco `{ ... }` é um cartão de vídeo. O arquivo tem instruções no início. Resumindo:
-- `categoria`: `"casamento"`, `"trend"` ou `"empresa"`. Define em qual aba do Portfólio o cartão aparece (Casamentos, Trends, Empresas).
+- `categoria`: `"casamento"`, `"trend"` ou `"empresa"`. Define em qual aba do Portfólio o cartão aparece (Casamentos ou Trends; a aba Empresas foi retirada por enquanto).
 - `tipo`: o rótulo do cartão (ex.: “Pré wedding”, “Making of da noiva”, “Cerimônia”, “Festa”). Vazio mostra o nome da categoria.
 - `titulo`: nome do casal ou da empresa (**só com autorização**). Vazio = não aparece nome.
 - `arquivo`, `youtube` ou `vimeo`: o vídeo que abre ao clicar (use só um). Sem nenhum deles, o cartão mostra o espaço reservado.
@@ -104,7 +104,7 @@ Cada bloco `{ ... }` é um cartão de vídeo. O arquivo tem instruções no iní
 Os 3 vídeos da seção da página inicial têm lista própria (mexer no Portfólio não muda a Home). Cada item tem `poster`, `arquivo` (ou `youtube`/`vimeo`) e `formato`. Só os 3 primeiros aparecem.
 
 ### Portfólio completo: `data/portfolio-completo.json`
-Mesmo formato. Esta lista **só é baixada depois que a pessoa preenche o formulário**.
+Esta lista **só é baixada depois que a pessoa preenche o formulário**. Ela é dividida em **duas seções, uma por modalidade**: “FilmMaker mobile” e “StoryMaker” (8 cartões em cada, com os rótulos que a Nath definiu, como “Cerimônia e festa” ou “Pré wedding, making of, cerimônia e festa”). Cada seção tem `titulo`, `destaque` (palavra em itálico), `rotulo` e a lista de `itens`; cada item usa os mesmos campos dos cartões acima (`tipo`, `poster`, `arquivo`/`youtube`/`vimeo`...). Enquanto um cartão não tiver vídeo, ele aparece como espaço reservado.
 
 ### Depoimentos: `data/depoimentos.json`
 Aceita print de WhatsApp (`"tipo": "print"` + `"imagem"`) ou texto (`"tipo": "texto"`). **Só publique com autorização de cada cliente.** Os itens `"tipo": "reservado"` são os espaços reservados.

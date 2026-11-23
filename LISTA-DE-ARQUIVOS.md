@@ -90,7 +90,11 @@ Para cada vídeo: o `.mp4` em `assets/video/`, a capa `.jpg` com o **mesmo nome*
 Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa `exemplo1.mp4` (pré wedding), `exemplo2.mp4` (save the date) e `exemplo3.mp4` (making of), como estava antes, com as capas enviadas pela Nath: `home-historia-1.jpg` (pré wedding), `home-historia-2.jpg` (save the date) e `home-historia-3.jpg` (making of da noiva).
 
 ### Portfólio completo (liberado pelo formulário)
-Mínimo de 6 vídeos: `casal-04` a `casal-09`, com a mesma ideia (`casal-04.mp4`, `casal-04-previa.mp4`, `casal-04.jpg`).
+Dividido em **duas seções por modalidade**, com 8 vídeos em cada (os rótulos já estão no `data/portfolio-completo.json`):
+- **FilmMaker mobile:** Bodas de ouro (cerimônia e festa) · Casamento e festa · Cerimônia · Festa · Making of, cerimônia e festa · Cerimônia · Cerimônia e festa · Cerimônia e festa.
+- **StoryMaker:** Bodas de esmeralda (making of, cerimônia e festa) · Cerimônia · Pré wedding, making of, cerimônia e festa (2 vezes) · Cerimônia e festa · Pré wedding · Cerimônia (2 vezes).
+
+Para cada vídeo: o `.mp4` (`assets/video/`), a capa `.jpg` (`assets/posters/`) e, se quiser, uma prévia `-previa.mp4`. Enquanto o vídeo não chega, o cartão aparece como espaço reservado.
 **Dica de proteção:** em vez de arquivos `.mp4`, publique como **“Não listado”** no YouTube ou Vimeo e coloque só o código no JSON (campos `youtube` ou `vimeo`). Aí só precisa da capa `casal-04.jpg`.
 
 Onde escrever: `data/portfolio-aberto.json` (exemplos abertos e Home) e `data/portfolio-completo.json`.
@@ -113,7 +117,7 @@ Onde escrever: `data/depoimentos.json` (cada item com `"tipo": "print"` e `"imag
 ## Resumo da contagem
 - **Fotos fixas:** 12 (6 na Home, contando as 4 do carrossel, e 6 em Sobre). Do Sobre falta só `equipe-irmao` (foto do seu irmão).
 - **Vídeos fixos:** 2 versões do vídeo da primeira tela + 1 vídeo de empresas (depois), com 2 capas
-- **Vídeos de casais:** 3 para a Home e exemplos abertos, mais pelo menos 6 para o portfólio completo
+- **Vídeos de casais:** 3 para a Home e exemplos abertos, mais 16 para o portfólio completo (8 FilmMaker mobile e 8 StoryMaker)
 - **Prints de depoimento:** 3 ou mais
 - **Já está pronto (não precisa enviar):** logos, ícones, imagem de compartilhamento e texturas
 

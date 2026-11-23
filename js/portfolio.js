@@ -214,9 +214,41 @@
     estado.hidden = false;
     estado.innerHTML = '<span class="girando" aria-hidden="true"></span> Carregando o portfólio completo…';
     NF.json('data/portfolio-completo.json').then(function (d) {
-      var itens = d.itens || [];
+      // Formato novo: "secoes" (uma por modalidade, cada uma com seus itens).
+      // Formato antigo: só "itens" (vira uma grade única, sem título).
+      var secoes = (d.secoes && d.secoes.length) ? d.secoes : [{ itens: d.itens || [] }];
       grade.innerHTML = '';
-      itens.forEach(function (item, i) { grade.appendChild(NF.cartaoPortfolio(item, { atraso: ((i % 3) * .1) + 's' })); });
+      secoes.forEach(function (s, si) {
+        var sec = document.createElement('section');
+        sec.className = 'p-secao';
+        if (s.titulo) {
+          var idTitulo = 'p-secao-' + (s.id || si);
+          sec.setAttribute('aria-labelledby', idTitulo);
+          var cab = document.createElement('header');
+          cab.className = 'p-secao__cab revelar';
+          var rotulo = document.createElement('p');
+          rotulo.className = 'eyebrow';
+          rotulo.textContent = s.rotulo || 'Modalidade';
+          var h = document.createElement('h3');
+          h.id = idTitulo;
+          h.className = 'titulo t-lg';
+          h.appendChild(document.createTextNode(s.titulo));
+          if (s.destaque) {
+            h.appendChild(document.createTextNode(' '));
+            var em = document.createElement('em');
+            em.textContent = s.destaque;
+            h.appendChild(em);
+          }
+          cab.appendChild(rotulo);
+          cab.appendChild(h);
+          sec.appendChild(cab);
+        }
+        var g = document.createElement('div');
+        g.className = 'p-grade';
+        (s.itens || []).forEach(function (item, i) { g.appendChild(NF.cartaoPortfolio(item, { atraso: ((i % 3) * .1) + 's' })); });
+        sec.appendChild(g);
+        grade.appendChild(sec);
+      });
       NF.revelar(grade);
       estado.hidden = true;
       completoCarregado = true;

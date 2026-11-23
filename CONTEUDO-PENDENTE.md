@@ -28,7 +28,7 @@ Marque ✅ conforme for resolvendo.
 | ✅ | **3 vídeos curtos de casamento** (“Histórias recentes” da Home e exemplos abertos do Portfólio): **já estão no site** (`exemplo1.mp4` a `exemplo3.mp4`) | `data/historias-home.json` (Home) e `data/portfolio-aberto.json` (Portfólio). Falta, se quiser, o nome do casal (só com autorização) no campo `titulo` do Portfólio. As capas da Home agora são as suas fotos (`home-historia-1` a `3` em `assets/posters/`), e as de Casamentos no Portfólio também (`capa-pre-wedding`, `capa-making-of`, `capa-cerimonia`, `capa-festa`). As das Trends também (`capa-trend-1` a `3`). |
 | ☐ | **Vídeo institucional para empresas** (página Empresas). Por enquanto o espaço do vídeo não aparece; a página fica só com o texto | `site.config.js` → `"empresas-video"` |
 | ☐ | **Vídeos das abas do Portfólio:** faltam só os de Empresas (a aba Empresas foi retirada dos exemplos por enquanto; quando tiver vídeos, é só me mandar que eu volto com ela). Pré wedding, making of, cerimônia, festa e os 3 Trends já estão no site. | `data/portfolio-aberto.json` (`categoria` `"casamento"`, `"trend"` ou `"empresa"`) |
-| ☐ | **Vídeos do portfólio completo** (liberados pelo formulário) | `data/portfolio-completo.json` (de preferência como “Não listado” no YouTube ou Vimeo) |
+| ☐ | **16 vídeos do portfólio completo** (liberados pelo formulário), em duas seções: 8 de FilmMaker mobile e 8 de StoryMaker, já com os rótulos de cada um | `data/portfolio-completo.json` (de preferência como “Não listado” no YouTube ou Vimeo) |
 
 ---
 
