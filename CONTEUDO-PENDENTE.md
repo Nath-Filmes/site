@@ -16,7 +16,7 @@ Marque ✅ conforme for resolvendo.
 | ✅ | **Serviço do formulário** | `FORM_TIPO`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` | Ligado ao **Supabase** e testado: os contatos caem na tabela `leads_portfolio` (painel do Supabase → Table Editor). Veja o README, seção 7. |
 | ✅ | **Número de casamentos filmados** | `casamentos` | Agora diz **“mais de 20 casamentos filmados desde fevereiro de 2025”**, como você pediu. |
 | ☐ | **“Agenda aberta para 20XX”** | `agendaAberta` | Desligada. Ligue (`ativo: true`) e ajuste o ano quando quiser. |
-| ☐ | **Domínio** | em vários arquivos | Está `SEU-DOMINIO.com.br`. Troque com Localizar e Substituir (README, seção 9). |
+| ✅ | **Domínio** | em vários arquivos | Trocado para `www.nathfilmes.com` (27 endereços, com `tools/trocar-dominio.py`; README, seção 9). |
 
 ---
 

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Para trocar o endereço do site: tools/trocar-dominio.py (README, seção 9)
-Sitemap: https://SEU-DOMINIO.com.br/sitemap.xml
+Sitemap: https://www.nathfilmes.com/sitemap.xml

@@ -203,14 +203,15 @@ Em `site.config.js`:
 
 ## 9. Domínio e Google (SEO)
 
-Enquanto o endereço real não existe, os arquivos usam o endereço de exemplo **`SEU-DOMINIO.com.br`**. Quando o site estiver no ar (primeiro no endereço da Vercel, depois no domínio próprio), troque em todos os arquivos de uma vez, no terminal, dentro da pasta do site:
+O endereço oficial do site é **`https://www.nathfilmes.com`** (desde 23/11/2026). A Vercel também responde em `site-eight-sigma-99.vercel.app`, e `nathfilmes.com` (sem o www) redireciona para o `www`. Esse endereço está nas páginas (`canonical`, prévias de compartilhamento), no `sitemap.xml` e no `robots.txt`.
+
+Se um dia o endereço mudar, troque em todos os arquivos de uma vez, no terminal, dentro da pasta do site:
 
 ```
-python tools/trocar-dominio.py nath-filmes.vercel.app
-python tools/trocar-dominio.py www.nathfilmes.com.br
+python tools/trocar-dominio.py novo-endereco.com.br
 ```
 
-O programa descobre sozinho qual endereço estava valendo, então pode rodar de novo quando o domínio próprio ficar pronto. Depois é só publicar de novo (commit e envio ao GitHub).
+O programa descobre sozinho qual endereço estava valendo, então pode rodar quantas vezes precisar. Depois é só publicar de novo (commit e envio ao GitHub).
 
 Isso atualiza os endereços das páginas (`canonical`), as prévias de compartilhamento (WhatsApp, Instagram), os dados estruturados do Google (LocalBusiness), o `sitemap.xml` e o `robots.txt`.
 
