@@ -42,7 +42,8 @@
       <a class="btn btn--claro" data-wa="reserva" href="#">Reservar minha data</a>
     </div>
     <div class="s-hero__foto">
-      <div class="slot" data-slot="sobre-hero" data-prioridade data-legenda="Foto grande da Nath (página inteira)"></div>
+      <!-- data-so-desktop: no celular esta foto grande não aparece (só a tira de negativo, mais abaixo) e nem é baixada -->
+      <div class="slot" data-slot="sobre-hero" data-prioridade data-so-desktop data-legenda="Foto grande da Nath (página inteira)"></div>
     </div>
   </section>
 
@@ -80,7 +81,9 @@
   <!-- ================= COMPONENTE: EQUIPE ================= -->
   <section class="bloco bloco--creme-2 equipe" data-bloco="equipe" aria-labelledby="equipe-titulo">
     <div class="container equipe__grid">
-      <div class="slot revelar" data-slot="equipe-irmao" data-legenda="Foto do meu irmão, filmando"></div>
+      <!-- data-ocultar-vazio: enquanto "equipe-irmao" não tiver foto em site.config.js, este espaço some da página.
+           Quando a foto entrar (campo src), ela aparece sozinha ao lado do texto. -->
+      <div class="slot revelar" data-slot="equipe-irmao" data-ocultar-vazio data-legenda="Foto do meu irmão, filmando"></div>
       <div class="equipe__texto revelar">
         <p class="eyebrow">A equipe</p>
         <h2 id="equipe-titulo" class="titulo t-lg">Eu não filmo <em>sozinha</em></h2>

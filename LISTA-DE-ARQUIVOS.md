@@ -44,12 +44,12 @@ Não são mais usados: `hero-video-vertical.mp4` e as fotos de `assets/img/guard
 ### Sobre
 | ✔ | Arquivo | Onde aparece | Formato |
 |---|---|---|---|
-| ✅ | `sobre-hero.jpg` | Abertura da página, metade direita | Já enviada (você sorrindo, vista na tela de uma câmera) |
+| ✅ | `sobre-hero.jpg` | Abertura da página, metade direita. **Só no computador**: no celular ela não aparece (nem é baixada) | Já enviada (você sorrindo, vista na tela de uma câmera) |
 | ✅ | `negativo-1.jpg` | Tira de negativo, quadro 1 | Já enviada (a foto em preto e branco na igreja) |
 | ✅ | `negativo-2.jpg` | Tira de negativo, quadro 2 | Já enviada (de perfil filmando) |
 | ✅ | `negativo-3.jpg` | Tira de negativo, quadro 3 | Já enviada (filmando a cerimônia) |
 | ✅ | `negativo-4.jpg` | Tira de negativo, quadro 4 | Já enviada (sorrindo com a luz de vídeo) |
-| ☐ | `equipe-irmao.jpg` | Equipe, **foto do seu irmão** (vai ser enviada depois; o nome dele não aparece no site) | Vertical 4:5 (colorida) |
+| ☐ | `equipe-irmao.jpg` | Equipe, **foto do seu irmão** (vai ser enviada depois; o nome dele não aparece no site). **Enquanto não houver foto, o espaço some da página** e o texto da equipe fica sozinho | Vertical 4:5 (colorida) |
 
 ### Experiência
 Sem fotos fixas. A abertura da página é só o fundo preto com o texto (a foto grande foi retirada a pedido da Nath).

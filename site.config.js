@@ -131,6 +131,8 @@ window.SITE_CONFIG = {
     "negativo-2":         { src: "assets/img/negativo-2.jpg", alt: "Nath de perfil, filmando com o celular, com um rádio comunicador na cintura" },
     "negativo-3":         { src: "assets/img/negativo-3.jpg", alt: "Nath de costas filmando uma cerimônia com o celular, ao lado de um arranjo de flores secas" },
     "negativo-4":         { src: "assets/img/negativo-4.jpg", alt: "Nath sorrindo, segurando o celular com uma luz de vídeo acoplada" },
+    // Sem foto por enquanto: enquanto src estiver vazio, este espaço NÃO aparece na página (o texto da equipe fica sozinho).
+    // Quando a foto chegar, coloque o arquivo em assets/img/ e preencha src (e alt): ela aparece sozinha.
     "equipe-irmao":       { src: "", alt: "" }
   }
 };

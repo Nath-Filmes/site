@@ -43,9 +43,9 @@ Use preferencialmente luz natural. O site **não altera as cores** das suas foto
 | ✅ | `nath-lateral` | Home, apresentação (só no computador) | **Já é um vídeo curto** (`assets/video/nath-lateral.mp4`) |
 | — | `exp-story-1/2`, `exp-film-1/2` | Não são mais usadas na Home | Fotos guardadas em `assets/img/guardadas/` |
 | ✅ | `depoimentos-foto` (arquivo `depoimentosfotonoiva.jpg`) | Home, depoimentos: foto da Nath com a noiva vendo o vídeo e sorrindo | Quadrada ou 4:5 (cantos arredondados, sem escurecer) |
-| ✅ | `sobre-hero` | Sobre, abertura (metade direita) | Já enviada (você sorrindo, vista na tela de uma câmera). |
+| ✅ | `sobre-hero` | Sobre, abertura (metade direita) | Já enviada (você sorrindo, vista na tela de uma câmera). **Só aparece no computador**; no celular fica só o texto e a tira de negativo. |
 | ✅ | `negativo-1` a `negativo-4` | Sobre, tira de negativo | Já enviadas (do seu zip `fotos minhas.zip`; a 5ª foto, a da noiva com óculos “CASEI”, ficou de fora porque já está na Home) |
-| ☐ | `equipe-irmao` | Sobre, equipe | **Foto do seu irmão**, vertical 4:5 (colorida). Você vai enviar depois. O nome dele não aparece no site. |
+| ☐ | `equipe-irmao` | Sobre, equipe | **Foto do seu irmão**, vertical 4:5 (colorida). Você vai enviar depois. O nome dele não aparece no site. Enquanto não chegar, o espaço da foto some da página (o texto da equipe fica sozinho); quando chegar, é só me mandar que ela aparece. |
 
 ---
 

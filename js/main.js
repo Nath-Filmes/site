@@ -79,6 +79,21 @@
 
   function montarSlot(el) {
     if (el.dataset.montado) return;
+    // data-so-desktop: foto que só aparece em tela grande (a partir de 900 px). No celular ela nem é baixada;
+    // se a tela crescer depois (celular deitado, por exemplo), ela é montada na hora.
+    if (el.hasAttribute('data-so-desktop') && !window.matchMedia('(min-width: 900px)').matches) {
+      if (!el.dataset.aguardando) {
+        el.dataset.aguardando = '1';
+        var tela = window.matchMedia('(min-width: 900px)');
+        var abrir = function () {
+          if (!tela.matches) return;
+          if (tela.removeEventListener) tela.removeEventListener('change', abrir); else if (tela.removeListener) tela.removeListener(abrir);
+          montarSlot(el);
+        };
+        if (tela.addEventListener) tela.addEventListener('change', abrir); else if (tela.addListener) tela.addListener(abrir);
+      }
+      return;
+    }
     el.dataset.montado = '1';
     var nome = el.getAttribute('data-slot');
     var tipo = el.getAttribute('data-tipo') || 'foto';
@@ -116,6 +131,11 @@
       el.appendChild(imagem((telaPequena && cfg.posterMobile) ? cfg.posterMobile : (cfg.poster || cfg.posterMobile)));
     } else if (cfg.src && tipo !== 'video') {
       el.appendChild(imagem(cfg.src, cfg.srcset));
+    } else if (el.hasAttribute('data-ocultar-vazio')) {
+      // ainda sem foto: o espaço some (nada de "espaço reservado" na página) e o bloco ao redor fica só com o texto.
+      // Quando o arquivo entrar em site.config.js (campo src), a foto aparece sozinha.
+      el.hidden = true;
+      if (el.parentElement) el.parentElement.classList.add('sem-foto');
     } else {
       el.insertAdjacentHTML('beforeend', reservado(legenda, tipo, nome));
     }
