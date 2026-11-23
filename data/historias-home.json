@@ -1,0 +1,40 @@
+{
+  "_como_editar": [
+    "Estes são os 3 vídeos da seção 'Portfólio / Histórias recentes' da página inicial. Eles são independentes da página Portfólio: mexer lá não muda aqui.",
+    "Cada item entre { } é um cartão. Na Home o cartão mostra só o vídeo e o 'Ver mais' (sem rótulo nem nome).",
+    "poster: imagem de capa, ex.: 'assets/posters/exemplo1.jpg' (o mesmo nome do vídeo, na pasta assets/posters).",
+    "arquivo / youtube / vimeo: o vídeo que abre ao clicar. Use UM deles: arquivo ('assets/video/exemplo1.mp4'), youtube (só o código) ou vimeo (só o número).",
+    "previa: vídeo MUITO curto e leve (3 a 6 s, sem som) que fica rodando no cartão (opcional).",
+    "formato: 'vertical' ou 'horizontal'. Só os 3 primeiros itens aparecem.",
+    "Atenção: não apague as vírgulas nem as aspas. Em caso de dúvida, copie um item inteiro e edite a cópia."
+  ],
+  "itens": [
+    {
+      "categoria": "casamento",
+      "formato": "vertical",
+      "poster": "assets/posters/exemplo1.jpg",
+      "previa": "",
+      "arquivo": "assets/video/exemplo1.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "casamento",
+      "formato": "vertical",
+      "poster": "assets/posters/exemplo2.jpg",
+      "previa": "",
+      "arquivo": "assets/video/exemplo2.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "casamento",
+      "formato": "vertical",
+      "poster": "assets/posters/exemplo3.jpg",
+      "previa": "",
+      "arquivo": "assets/video/exemplo3.mp4",
+      "youtube": "",
+      "vimeo": ""
+    }
+  ]
+}

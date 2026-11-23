@@ -1,0 +1,16 @@
+{
+  "_como_editar": [
+    "Só publique depoimentos COM AUTORIZAÇÃO de cada cliente.",
+    "Para um print de WhatsApp: tipo 'print', imagem 'assets/img/depoimento-01.jpg' e alt descrevendo o print.",
+    "Para um texto: tipo 'texto', e o campo texto com a fala da cliente (copie exatamente o que ela escreveu).",
+    "autor: nome ou iniciais (só com autorização). contexto: 'StoryMaker', 'FilmMaker mobile' ou 'Empresa'.",
+    "Itens com tipo 'reservado' mostram o espaço reservado. Troque-os pelos depoimentos reais. Há espaço para 5 depoimentos; para mostrar mais, copie um item inteiro (entre { }) e cole depois dele."
+  ],
+  "itens": [
+    { "tipo": "print", "imagem": "assets/img/feedback1.webp", "alt": "Mensagem de WhatsApp de uma cliente: “Estava olhando os outros vídeos... nossa, parece que vivi aquele dia de novo”" },
+    { "tipo": "print", "imagem": "assets/img/feedback2.webp", "alt": "Mensagem de WhatsApp de uma cliente: “Foi uma das melhores contratações que fiz!”" },
+    { "tipo": "print", "imagem": "assets/img/feedback3.webp", "alt": "Mensagem de WhatsApp de uma cliente: “Graças a Deus tudo perfeito. Momento único!!! A gente é meio boba, fica viajando às vezes nos pensamentos e recordando do dia que foi maravilhoso. Só tenho a agradecer a Deus e a todos vocês. Por isso a importância dos vídeos: quando os pensamentos falharem eu tenho os vídeos para ajudar.”" },
+    { "tipo": "print", "imagem": "assets/img/feedback4.webp", "alt": "Mensagem de WhatsApp de uma cliente: “Nossa, nós choramos revendo os vídeos. Todos os momentos foram captados. Eu quase não fechei esse serviço e, graças a Deus, me enviou você, muito talentosa, educada e profissional. Muitíssimo obrigada. Estamos sem palavras...”" },
+    { "tipo": "print", "imagem": "assets/img/feedback5.webp", "alt": "Mensagem de WhatsApp de uma cliente: “Natália, muitíssimo obrigada! Que Deus te abençoe muito! Ficou tudo lindo demais, amei, ficou do jeitinho que eu sempre imaginei. Obrigada por fazer isso acontecer!”" }
+  ]
+}

@@ -1,0 +1,11 @@
+FOTOS DO SITE
+
+Coloque aqui as fotos (JPG ou WebP, no máximo 1600 px no lado maior, de preferência abaixo de 300 KB).
+Depois escreva o nome do arquivo no site.config.js, dentro de "midia" (veja o README.md, seção 4).
+
+Os arquivos favicon.svg, apple-touch-icon.png, og-image.jpg (imagem de compartilhamento),
+papel.webp e grao.webp (texturas do visual) já fazem parte do site. Não apague.
+
+Dica: coloque as fotos originais (pesadas) na subpasta "originais" e rode
+  python tools/otimizar-imagens.py
+para gerar versões leves em vários tamanhos.

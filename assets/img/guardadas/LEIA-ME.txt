@@ -1,0 +1,18 @@
+FOTOS GUARDADAS (fora do site por enquanto)
+
+Estas fotos nao aparecem em nenhuma pagina. Ficaram aqui porque a secao
+"Duas formas de guardar o seu dia", na Home, agora so tem texto.
+
+Quando quiser usar uma delas de novo, mova o arquivo para a pasta assets/img
+e escreva o caminho no site.config.js.
+Pasta feedbacks-originais: os prints de WhatsApp como voce enviou (com o
+fundo do chat). No site entraram as versoes sem fundo: feedback1.webp a
+feedback5.webp, em assets/img.
+
+amor-ouvir-microfone.jpg: a noiva falando os votos ao microfone. Era a foto do
+quadro "Ouvir os votos." do carrossel da Home, ate ser trocada pelo beijo na
+igrejinha azul (23/11/2026).
+amor-rever-risada.jpg: a convidada rindo. Era a foto do quadro "Rever reacoes."
+do carrossel, ate ser trocada pelo casal no parque (23/11/2026).
+Para usar de novo, mova para assets/img com o nome do quadro (amor-ouvir.jpg
+ou amor-rever.jpg) e confira o texto alternativo no site.config.js.

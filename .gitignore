@@ -1,3 +1,29 @@
+# Fotos grandes, no tamanho original (antes de otimizar).
+# O README manda colocar aqui e rodar tools/otimizar-imagens.py; só as versões leves vão para o site.
+assets/img/originais/
+
+# Lixo que o Windows e o Mac criam sozinhos
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Arquivos temporários do Python (tools/otimizar-imagens.py)
+__pycache__/
+*.pyc
+
+# Editores
+.vscode/
+.idea/
+
+# Rascunhos e cópias de segurança
+*.bak
+*.tmp
+~$*
+
+# ---------------------------------------------------------------
+# Modelo padrão do GitHub para projetos Node (veio no 'Initial commit' do repositório).
+# O site não usa Node, mas as regras (como .env, node_modules) ficam de proteção.
+# ---------------------------------------------------------------
 # Logs
 logs
 *.log

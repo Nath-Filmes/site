@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio | Nath Filmes, vídeos de casamento em Pouso Alegre (MG)</title>
+  <meta name="description" content="Veja exemplos de vídeos de casamento e de conteúdo para empresas da Nath Filmes, em Pouso Alegre (MG) e região, e libere o portfólio completo.">
+  <meta name="theme-color" content="#FFFBF5">
+  <link rel="canonical" href="https://SEU-DOMINIO.com.br/portfolio.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Nath Filmes">
+  <meta property="og:title" content="Portfólio | Nath Filmes">
+  <meta property="og:description" content="Histórias de casamento e de conteúdo para empresas, filmadas em Pouso Alegre (MG) e região.">
+  <meta property="og:url" content="https://SEU-DOMINIO.com.br/portfolio.html">
+  <meta property="og:image" content="https://SEU-DOMINIO.com.br/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fontes do Google (display=swap): carregam sem travar a página -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Poppins:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Poppins:wght@400;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += ' js'; window.__nfRev = setTimeout(function () { document.documentElement.classList.add('sem-revelar'); }, 5000);</script>
+</head>
+<body data-wa-padrao="reserva">
+
+<div data-incluir="topo"><noscript><nav class="noscript-nav"><a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="experiencia.html">Experiência</a><a href="portfolio.html">Portfólio</a></nav></noscript></div>
+<script src="site.config.js"></script>
+<script src="js/layout.js"></script>
+
+<main id="principal">
+
+  <!-- ================= ABERTURA ================= -->
+  <section class="bloco bloco--papel p-hero" data-bloco="portfolio-abertura" aria-labelledby="p-titulo">
+    <div class="container">
+      <p class="eyebrow">Portfólio</p>
+      <h1 id="p-titulo" class="titulo t-xl">Histórias que viram <em>filme</em></h1>
+      <p class="lead">Alguns vídeos para você sentir como é reviver um dia especial.</p>
+    </div>
+  </section>
+
+  <!-- ================= EXEMPLOS DISPONÍVEIS (abas: Casamentos, Trends, Empresas) ================= -->
+  <section class="bloco bloco--creme" id="exemplos" data-bloco="exemplos-abertos" style="padding-top:clamp(48px,6vw,80px)" aria-labelledby="exemplos-titulo">
+    <div class="container">
+      <h2 id="exemplos-titulo" class="titulo t-md" style="margin-bottom:28px">Exemplos <em>disponíveis</em></h2>
+      <div class="p-filtros" role="group" aria-label="Escolher a categoria dos vídeos">
+        <button type="button" data-filtro="casamento" aria-pressed="true">Casamentos</button>
+        <button type="button" data-filtro="trend" aria-pressed="false">Trends</button>
+        <button type="button" data-filtro="empresa" aria-pressed="false">Empresas</button>
+      </div>
+      <!-- Os cartões vêm de data/portfolio-aberto.json -->
+      <div class="p-grade" id="grade-aberta" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ================= PORTFÓLIO COMPLETO: FORMULÁRIO ================= -->
+  <section class="bloco acesso" id="acesso" data-bloco="acesso-portfolio" aria-labelledby="acesso-titulo">
+    <div class="container acesso__grid">
+      <div class="acesso__texto">
+        <p class="eyebrow">Portfólio completo</p>
+        <h2 id="acesso-titulo" class="titulo t-lg revelar">Quer ver o portfólio <em>completo?</em></h2>
+        <p class="revelar">Deixe seu nome, e-mail e celular e eu libero aqui mesmo, na hora, todos os vídeos. Uso seus dados só para isso e para entrar em contato com você.</p>
+      </div>
+
+      <div class="revelar">
+        <!-- Estado 1: formulário -->
+        <form id="form-portfolio" class="form" name="portfolio" method="POST" action="#" novalidate data-netlify="true" netlify-honeypot="site_empresa">
+          <input type="hidden" name="form-name" value="portfolio">
+          <p class="honeypot" aria-hidden="true"><label>Não preencha este campo <input type="text" name="site_empresa" tabindex="-1" autocomplete="off"></label></p>
+
+          <div class="campo">
+            <label for="f-nome">Seu nome</label>
+            <input type="text" id="f-nome" name="nome" autocomplete="name" placeholder="Como posso te chamar?" required aria-describedby="f-nome-erro">
+            <span class="campo__erro" id="f-nome-erro" role="alert"></span>
+          </div>
+          <div class="campo">
+            <label for="f-email">Seu e-mail</label>
+            <input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required aria-describedby="f-email-erro">
+            <span class="campo__erro" id="f-email-erro" role="alert"></span>
+          </div>
+          <div class="campo">
+            <label for="f-celular">Seu celular (com DDD)</label>
+            <input type="tel" id="f-celular" name="celular" autocomplete="tel-national" inputmode="tel" maxlength="15" placeholder="(35) 99999-9999" required aria-describedby="f-celular-erro">
+            <span class="campo__erro" id="f-celular-erro" role="alert"></span>
+          </div>
+
+          <div class="consentimento">
+            <input type="checkbox" id="f-consent" name="consentimento" value="sim" required>
+            <label for="f-consent" style="text-transform:none;letter-spacing:0;font:400 .9rem/1.5 var(--f-sans);color:inherit">Concordo em receber contato da Nath Filmes e com o uso dos meus dados para esse fim. <a href="privacidade.html" target="_blank" rel="noopener">Ler a política de privacidade</a>.</label>
+          </div>
+
+          <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
+          <button class="btn btn--claro" type="submit">Liberar o portfólio completo</button>
+        </form>
+
+        <!-- Estado 2: liberado -->
+        <div id="acesso-ok" class="liberado" hidden>
+          <h2 class="titulo t-lg">Portfólio <em>liberado</em></h2>
+          <p class="lead" style="color:var(--cinza-claro)">Obrigada por querer ver! Role a página: todas as histórias estão logo abaixo.</p>
+          <p class="pequeno" id="aviso-teste" hidden style="color:var(--cinza-claro);margin-bottom:20px">Modo de teste: o formulário ainda não está ligado a um serviço de recebimento, então nenhum dado foi enviado. (Veja o README para configurar.)</p>
+          <a class="btn btn--claro" data-wa="portfolio" href="#">Reservar minha data no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTFÓLIO COMPLETO: GRADE (só aparece depois do envio) ================= -->
+  <section class="bloco bloco--papel" id="completo" data-bloco="portfolio-completo" hidden aria-labelledby="completo-titulo" tabindex="-1">
+    <div class="container">
+      <header class="completo__cab">
+        <p class="eyebrow">Portfólio completo</p>
+        <h2 id="completo-titulo" class="titulo t-xl">Todas as <em>histórias</em></h2>
+      </header>
+      <div class="completo__estado" id="completo-estado" role="status" hidden></div>
+      <div class="p-grade" id="grade-completa"></div>
+      <div class="hist__rodape">
+        <a class="btn btn--escuro" data-wa="portfolio" href="#">Reservar minha data no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-incluir="rodape"></div>
+<script src="js/main.js" defer></script>
+<script src="js/portfolio.js" defer></script>
+</body>
+</html>

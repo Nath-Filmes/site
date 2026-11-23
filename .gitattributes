@@ -1,0 +1,5 @@
+# Deixa o git decidir o que é texto e o que é foto/vídeo (evita avisos de fim de linha no Windows)
+* text=auto
+
+# O .bat do Windows precisa manter o fim de linha do Windows
+*.bat text eol=crlf

@@ -1,0 +1,17 @@
+{
+  "_como_editar": [
+    "Esta lista só é carregada DEPOIS que a pessoa preenche o formulário (o HTML da página não traz estes vídeos).",
+    "Os campos são os mesmos de portfolio-aberto.json (titulo, categoria, local, formato, poster, previa, arquivo, youtube, vimeo).",
+    "Aviso: esse bloqueio é 'suave'. Quem entende de tecnologia consegue abrir este arquivo direto no navegador.",
+    "Para proteger de verdade, publique os vídeos como 'Não listados' no YouTube ou Vimeo e use o campo youtube/vimeo (não coloque arquivos .mp4 aqui).",
+    "Adicione quantos itens quiser, copiando um bloco inteiro { ... } e colocando uma vírgula entre eles."
+  ],
+  "itens": [
+    { "titulo": "", "categoria": "casamento", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
+    { "titulo": "", "categoria": "casamento", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
+    { "titulo": "", "categoria": "casamento", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
+    { "titulo": "", "categoria": "casamento", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
+    { "titulo": "", "categoria": "casamento", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
+    { "titulo": "", "categoria": "casamento", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" }
+  ]
+}

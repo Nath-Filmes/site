@@ -1,0 +1,5 @@
+CAPAS DOS VÍDEOS (posters)
+
+Coloque aqui a imagem de capa de cada vídeo (JPG ou WebP, uns 1280 px de largura).
+A capa aparece enquanto o vídeo carrega e para quem prefere menos movimento.
+Preencha o campo "poster" no site.config.js ou em data/portfolio-aberto.json.

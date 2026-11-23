@@ -1,0 +1,10 @@
+VÍDEOS DO SITE
+
+Coloque aqui os vídeos (MP4, H.264). Nomes sem acento e sem espaço (ex.: hero.mp4).
+
+Primeira tela:  8 a 15 segundos, sem áudio, em loop.
+                Computador: 1280x720, até uns 4 MB.   Celular: 720x1280, até uns 2,5 MB.
+Prévias dos cartões do portfólio: 3 a 6 segundos, sem áudio, bem leves.
+
+Depois escreva o caminho no site.config.js (espaço "hero-video") ou em data/portfolio-aberto.json.
+Veja o README.md, seções 4 e 5.

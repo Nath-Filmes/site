@@ -1,0 +1,138 @@
+{
+  "_como_editar": [
+    "Cada item entre { } é um cartão de vídeo. Para trocar um espaço reservado por um vídeo real, preencha os campos abaixo.",
+    "categoria: 'casamento', 'trend' ou 'empresa'. É ela que decide em qual aba do Portfólio o cartão aparece (Casamentos, Trends ou Empresas).",
+    "tipo: o rótulo que aparece no cartão, ex.: 'Pré wedding', 'Making of da noiva', 'Cerimônia', 'Festa'. Se deixar vazio, aparece o nome da categoria.",
+    "titulo: opcional. Só preencha com o nome do casal ou da empresa SE tiver autorização. Vazio = não aparece nome nenhum.",
+    "local: texto curto opcional, ex.: 'Pouso Alegre, MG' (deixe vazio se não quiser).",
+    "formato: 'vertical' (celular/reels) ou 'horizontal'.",
+    "poster: imagem de capa, ex.: 'assets/posters/exemplo1.jpg' (o mesmo nome do vídeo, na pasta assets/posters).",
+    "previa: vídeo MUITO curto e leve (3 a 6 s, sem som) que fica rodando no cartão, ex.: 'assets/video/exemplo1-previa.mp4'.",
+    "arquivo / youtube / vimeo: o vídeo que abre ao clicar. Use UM deles: arquivo ('assets/video/exemplo1.mp4'), youtube (só o código, ex.: 'dQw4w9WgXcQ') ou vimeo (só o número).",
+    "Os 3 vídeos da seção 'Histórias recentes' da Home ficam em outro arquivo: data/historias-home.json. Mexer aqui não muda a Home.",
+    "Para ter mais vídeos em uma categoria, copie um item inteiro (entre { }) e cole logo depois dele.",
+    "Atenção: não apague as vírgulas nem as aspas. Em caso de dúvida, copie um item inteiro e edite a cópia."
+  ],
+  "itens": [
+    {
+      "categoria": "casamento",
+      "tipo": "Pré wedding",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/pre-wedding.jpg",
+      "previa": "",
+      "arquivo": "assets/video/pre-wedding.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "casamento",
+      "tipo": "Making of da noiva",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/exemplo3.jpg",
+      "previa": "",
+      "arquivo": "assets/video/exemplo3.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "casamento",
+      "tipo": "Cerimônia",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/cerimonia.jpg",
+      "previa": "",
+      "arquivo": "assets/video/cerimonia.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "casamento",
+      "tipo": "Festa",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/festa.jpg",
+      "previa": "",
+      "arquivo": "assets/video/festa.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "trend",
+      "tipo": "Trend",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/trend-1.jpg",
+      "previa": "",
+      "arquivo": "assets/video/trend-1.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "trend",
+      "tipo": "Trend",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/trend-2.jpg",
+      "previa": "",
+      "arquivo": "assets/video/trend-2.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "trend",
+      "tipo": "Trend",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/trend-3.jpg",
+      "previa": "",
+      "arquivo": "assets/video/trend-3.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "empresa",
+      "tipo": "",
+      "titulo": "",
+      "local": "",
+      "formato": "horizontal",
+      "poster": "",
+      "previa": "",
+      "arquivo": "",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "empresa",
+      "tipo": "",
+      "titulo": "",
+      "local": "",
+      "formato": "horizontal",
+      "poster": "",
+      "previa": "",
+      "arquivo": "",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "categoria": "empresa",
+      "tipo": "",
+      "titulo": "",
+      "local": "",
+      "formato": "horizontal",
+      "poster": "",
+      "previa": "",
+      "arquivo": "",
+      "youtube": "",
+      "vimeo": ""
+    }
+  ]
+}
