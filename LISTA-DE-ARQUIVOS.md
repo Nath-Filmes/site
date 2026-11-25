@@ -91,7 +91,7 @@ Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa
 
 ### Portfólio completo (liberado pelo formulário)
 Dividido em **duas seções por modalidade**: 9 vídeos no FilmMaker e 7 no StoryMaker (os rótulos já estão no `data/portfolio-completo.json`):
-- **FilmMaker mobile** (nesta ordem na página; para mudar, é só reordenar os blocos no `data/portfolio-completo.json`): Making of, cerimônia e festa · Casamento e festa · Cerimônia · Cerimônia e festa · Bodas de ouro (cerimônia e festa) · Festa · Cerimônia · Cerimônia e festa · **Bodas de esmeralda (making of, cerimônia e festa), que é um vídeo na VERTICAL** (formato `vertical`; entrou no fim da lista e ainda falta o link do YouTube e a capa, de preferência uma foto em pé 4:5).
+- **FilmMaker mobile** (nesta ordem na página; para mudar, é só reordenar os blocos no `data/portfolio-completo.json`): Making of, cerimônia e festa · Casamento e festa · Cerimônia · Cerimônia e festa · Bodas de ouro (cerimônia e festa) · Festa · Cerimônia · Cerimônia e festa · **Bodas de esmeralda (making of, cerimônia e festa), que é um vídeo na VERTICAL** (formato `vertical`; está no fim da lista, já ligado ao YouTube). A capa atual é **provisória**: um recorte do quadro que o YouTube gerou (baixa resolução, porque o vídeo ainda estava sendo processado). O ideal é uma foto em pé 4:5.
 - **StoryMaker:** Cerimônia · Pré wedding, making of, cerimônia e festa (2 vezes) · Cerimônia e festa · Pré wedding · Cerimônia (2 vezes).
 
 Para cada vídeo: o `.mp4` (`assets/video/`), a capa `.jpg` (`assets/posters/`) e, se quiser, uma prévia `-previa.mp4`. Enquanto o vídeo não chega, o cartão aparece como espaço reservado.

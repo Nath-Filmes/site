@@ -26,7 +26,7 @@
         { "tipo": "Festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-festa.jpg", "previa": "", "arquivo": "", "youtube": "BDzxu1B58ls", "vimeo": "" },
         { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-2.jpg", "previa": "", "arquivo": "", "youtube": "CS8XQDsx4rI", "vimeo": "" },
         { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-festa-2.jpg", "previa": "", "arquivo": "", "youtube": "pOgthsJw_28", "vimeo": "" },
-        { "tipo": "Bodas de esmeralda: making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" }
+        { "tipo": "Bodas de esmeralda: making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/posters/capa-filmmaker-bodas-esmeralda.jpg", "previa": "", "arquivo": "", "youtube": "LvO0vlgghWs", "vimeo": "" }
       ]
     },
     {
