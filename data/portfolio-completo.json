@@ -25,7 +25,8 @@
         { "tipo": "Bodas de ouro: cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-bodas-ouro.webp", "previa": "", "arquivo": "", "youtube": "lGk7NKDkhGw", "vimeo": "" },
         { "tipo": "Festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-festa.jpg", "previa": "", "arquivo": "", "youtube": "BDzxu1B58ls", "vimeo": "" },
         { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-2.jpg", "previa": "", "arquivo": "", "youtube": "CS8XQDsx4rI", "vimeo": "" },
-        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-festa-2.jpg", "previa": "", "arquivo": "", "youtube": "pOgthsJw_28", "vimeo": "" }
+        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-festa-2.jpg", "previa": "", "arquivo": "", "youtube": "pOgthsJw_28", "vimeo": "" },
+        { "tipo": "Bodas de esmeralda: making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" }
       ]
     },
     {
@@ -36,7 +37,6 @@
       "estilo": "stories",
       "dica": "Toque em um story para assistir.",
       "itens": [
-        { "tipo": "Bodas de esmeralda: making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
         { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
         { "tipo": "Pré wedding, making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
         { "tipo": "Pré wedding, making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },

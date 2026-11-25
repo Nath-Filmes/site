@@ -90,9 +90,9 @@ Para cada vídeo: o `.mp4` em `assets/video/`, a capa `.jpg` com o **mesmo nome*
 Lista própria, independente do Portfólio: `data/historias-home.json`. Hoje usa `exemplo1.mp4` (pré wedding), `exemplo2.mp4` (save the date) e `exemplo3.mp4` (making of), como estava antes, com as capas enviadas pela Nath: `home-historia-1.jpg` (pré wedding), `home-historia-2.jpg` (save the date) e `home-historia-3.jpg` (making of da noiva).
 
 ### Portfólio completo (liberado pelo formulário)
-Dividido em **duas seções por modalidade**, com 8 vídeos em cada (os rótulos já estão no `data/portfolio-completo.json`):
-- **FilmMaker mobile** (nesta ordem na página; para mudar, é só reordenar os blocos no `data/portfolio-completo.json`): Making of, cerimônia e festa · Casamento e festa · Cerimônia · Cerimônia e festa · Bodas de ouro (cerimônia e festa) · Festa · Cerimônia · Cerimônia e festa.
-- **StoryMaker:** Bodas de esmeralda (making of, cerimônia e festa) · Cerimônia · Pré wedding, making of, cerimônia e festa (2 vezes) · Cerimônia e festa · Pré wedding · Cerimônia (2 vezes).
+Dividido em **duas seções por modalidade**: 9 vídeos no FilmMaker e 7 no StoryMaker (os rótulos já estão no `data/portfolio-completo.json`):
+- **FilmMaker mobile** (nesta ordem na página; para mudar, é só reordenar os blocos no `data/portfolio-completo.json`): Making of, cerimônia e festa · Casamento e festa · Cerimônia · Cerimônia e festa · Bodas de ouro (cerimônia e festa) · Festa · Cerimônia · Cerimônia e festa · **Bodas de esmeralda (making of, cerimônia e festa), que é um vídeo na VERTICAL** (formato `vertical`; entrou no fim da lista e ainda falta o link do YouTube e a capa, de preferência uma foto em pé 4:5).
+- **StoryMaker:** Cerimônia · Pré wedding, making of, cerimônia e festa (2 vezes) · Cerimônia e festa · Pré wedding · Cerimônia (2 vezes).
 
 Para cada vídeo: o `.mp4` (`assets/video/`), a capa `.jpg` (`assets/posters/`) e, se quiser, uma prévia `-previa.mp4`. Enquanto o vídeo não chega, o cartão aparece como espaço reservado.
 - **StoryMaker** aparece como stories do Instagram (bolinhas com anel que abrem em tela cheia). Cada vídeo: vertical 9:16, curto, H.264 + AAC, 720×1280, até uns 5 MB. A capa vira a foto da bolinha.
@@ -119,7 +119,7 @@ Onde escrever: `data/depoimentos.json` (cada item com `"tipo": "print"` e `"imag
 ## Resumo da contagem
 - **Fotos fixas:** 12 (6 na Home, contando as 4 do carrossel, e 6 em Sobre). Do Sobre falta só `equipe-irmao` (foto do seu irmão).
 - **Vídeos fixos:** 2 versões do vídeo da primeira tela + 1 vídeo de empresas (depois), com 2 capas
-- **Vídeos de casais:** 3 para a Home e exemplos abertos, mais 16 para o portfólio completo (8 FilmMaker mobile e 8 StoryMaker)
+- **Vídeos de casais:** 3 para a Home e exemplos abertos, mais 16 para o portfólio completo (9 FilmMaker mobile e 7 StoryMaker)
 - **Prints de depoimento:** 3 ou mais
 - **Já está pronto (não precisa enviar):** logos, ícones, imagem de compartilhamento e texturas
 
