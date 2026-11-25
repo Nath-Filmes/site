@@ -389,6 +389,9 @@
     if (form) form.hidden = true;
     if (ok) ok.hidden = false;
     if (secao) secao.hidden = false;
+    // o botão "Ver portfólio completo" (depois dos exemplos) passa a levar direto para a lista completa
+    var verCompleto = document.getElementById('ver-completo');
+    if (verCompleto) verCompleto.setAttribute('href', '#completo');
     carregarCompleto();
     if (foco && ok) {
       var h = ok.querySelector('h2');
