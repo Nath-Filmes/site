@@ -4,7 +4,7 @@
     "Ela é dividida em seções, uma por modalidade: 'FilmMaker mobile' e 'StoryMaker'. Cada seção tem: titulo, destaque (palavra em itálico ao lado do título, opcional), rotulo (texto pequeno acima do título; se deixar vazio aparece 'Modalidade') e a lista de itens.",
     "estilo (opcional): 'stories' mostra a seção como os stories do Instagram: bolinhas com anel que abrem um visualizador em tela cheia (toque à direita avança, à esquerda volta, segurar pausa). Sem 'estilo', a seção vira uma grade comum de cartões. dica (opcional): frase pequena abaixo do título.",
     "Cada item entre { } é um cartão: tipo (o texto do cartão, ex.: 'Cerimônia e festa'), formato ('vertical' ou 'horizontal'), poster (capa, na pasta assets/posters), previa (vídeo curtinho opcional) e UM destes: arquivo, youtube ou vimeo.",
-    "FilmMaker (vídeos longos, na horizontal): publique no YouTube como 'Não listado' e coloque em youtube SÓ o código do vídeo (o que vem depois de youtu.be/ ou de v= no link). A capa (poster) é uma imagem 1280x720 em assets/posters (hoje são quadros que o próprio YouTube gera).",
+    "FilmMaker (vídeos longos, na horizontal): publique no YouTube como 'Não listado' e coloque em youtube SÓ o código do vídeo (o que vem depois de youtu.be/ ou de v= no link). A capa (poster) é uma imagem 16:9 em assets/posters.",
     "Atenção: o YouTube mostra o TÍTULO do vídeo no topo do player dentro do site. Se não tiver autorização do casal para aparecer o nome, deixe só iniciais ou um título genérico no YouTube Studio (o link não muda).",
     "Enquanto um cartão não tiver vídeo, ele aparece como espaço reservado. Para ligar um vídeo, preencha poster e um dos campos arquivo/youtube/vimeo.",
     "titulo (nome do casal) e local são opcionais: só preencha com autorização. Vazio = não aparece nome nenhum.",
@@ -20,12 +20,12 @@
       "itens": [
         { "tipo": "Bodas de ouro: cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-bodas-ouro.jpg", "previa": "", "arquivo": "", "youtube": "lGk7NKDkhGw", "vimeo": "" },
         { "tipo": "Casamento e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-casamento-festa.jpg", "previa": "", "arquivo": "", "youtube": "UCkLaIVYI1o", "vimeo": "" },
-        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
+        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-1.jpg", "previa": "", "arquivo": "", "youtube": "X6Q7hyS0sv4", "vimeo": "" },
+        { "tipo": "Festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "BDzxu1B58ls", "vimeo": "" },
+        { "tipo": "Making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "mOxWCwLiMDQ", "vimeo": "" },
+        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "CS8XQDsx4rI", "vimeo": "" },
         { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-festa.jpg", "previa": "", "arquivo": "", "youtube": "82r7kU6L6QI", "vimeo": "" },
-        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" }
+        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "pOgthsJw_28", "vimeo": "" }
       ]
     },
     {
