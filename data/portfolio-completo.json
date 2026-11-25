@@ -18,14 +18,14 @@
       "titulo": "FilmMaker",
       "destaque": "mobile",
       "itens": [
-        { "tipo": "Bodas de ouro: cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-bodas-ouro.jpg", "previa": "", "arquivo": "", "youtube": "lGk7NKDkhGw", "vimeo": "" },
+        { "tipo": "Bodas de ouro: cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-bodas-ouro.webp", "previa": "", "arquivo": "", "youtube": "lGk7NKDkhGw", "vimeo": "" },
         { "tipo": "Casamento e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-casamento-festa.jpg", "previa": "", "arquivo": "", "youtube": "UCkLaIVYI1o", "vimeo": "" },
         { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-1.jpg", "previa": "", "arquivo": "", "youtube": "X6Q7hyS0sv4", "vimeo": "" },
-        { "tipo": "Festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "BDzxu1B58ls", "vimeo": "" },
-        { "tipo": "Making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "mOxWCwLiMDQ", "vimeo": "" },
-        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "CS8XQDsx4rI", "vimeo": "" },
+        { "tipo": "Festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-festa.jpg", "previa": "", "arquivo": "", "youtube": "BDzxu1B58ls", "vimeo": "" },
+        { "tipo": "Making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-making-of.jpg", "previa": "", "arquivo": "", "youtube": "mOxWCwLiMDQ", "vimeo": "" },
+        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-2.jpg", "previa": "", "arquivo": "", "youtube": "CS8XQDsx4rI", "vimeo": "" },
         { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-festa.jpg", "previa": "", "arquivo": "", "youtube": "82r7kU6L6QI", "vimeo": "" },
-        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "", "previa": "", "arquivo": "", "youtube": "pOgthsJw_28", "vimeo": "" }
+        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "horizontal", "poster": "assets/posters/capa-filmmaker-cerimonia-festa-2.jpg", "previa": "", "arquivo": "", "youtube": "pOgthsJw_28", "vimeo": "" }
       ]
     },
     {

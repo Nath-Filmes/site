@@ -24,3 +24,5 @@ assets/posters/home-historia-1 a 3.jpg e o Portfolio usa capa-pre-wedding,
 capa-making-of, capa-cerimonia, capa-festa e capa-trend-1 a 3. Para voltar a usar uma capa
 antiga, mova o arquivo para assets/posters e aponte o campo "poster" em
 data/historias-home.json ou data/portfolio-aberto.json.
+filmmaker-bodas-ouro-quadro-youtube.jpg: quadro que o YouTube gerou para o video
+de bodas de ouro (FilmMaker). Foi trocado pela sua foto (23/11/2026).
