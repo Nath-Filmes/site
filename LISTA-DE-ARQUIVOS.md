@@ -96,7 +96,7 @@ Dividido em **duas seções por modalidade**, com 8 vídeos em cada (os rótulos
 
 Para cada vídeo: o `.mp4` (`assets/video/`), a capa `.jpg` (`assets/posters/`) e, se quiser, uma prévia `-previa.mp4`. Enquanto o vídeo não chega, o cartão aparece como espaço reservado.
 - **StoryMaker** aparece como stories do Instagram (bolinhas com anel que abrem em tela cheia). Cada vídeo: vertical 9:16, curto, H.264 + AAC, 720×1280, até uns 5 MB. A capa vira a foto da bolinha.
-- **FilmMaker** (7 a 20 min): vídeo longo demais para ir dentro do site. Publique como “Não listado” no YouTube ou Vimeo e me passe o código/link.
+- **FilmMaker** (7 a 20 min): vídeo longo demais para ir dentro do site. Publique como “Não listado” no YouTube ou Vimeo e me passe o código/link. Todos na horizontal. **Já ligados (3 de 8):** Bodas de ouro, Casamento e festa e Cerimônia e festa (as capas são quadros que o próprio YouTube gera, em `assets/posters/capa-filmmaker-*.jpg`). Atenção: o YouTube mostra o título do vídeo no topo do player dentro do site.
 **Dica de proteção:** em vez de arquivos `.mp4`, publique como **“Não listado”** no YouTube ou Vimeo e coloque só o código no JSON (campos `youtube` ou `vimeo`). Aí só precisa da capa `casal-04.jpg`.
 
 Onde escrever: `data/portfolio-aberto.json` (exemplos abertos e Home) e `data/portfolio-completo.json`.
