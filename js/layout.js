@@ -21,12 +21,14 @@
     var msg;
     if (contexto === 'orcamento') {
       var e = NF.escolha;
+      // na página de casamento (<body data-lp>) vale a mensagem própria, que diz "Vi a sua página"
+      var lp = document.body.hasAttribute('data-lp');
       if (e.modalidade || e.pacote) {
-        msg = (m.orcamento || m.geral || '')
+        msg = ((lp && m.lpOrcamento) || m.orcamento || m.geral || '')
           .replace('{modalidade}', e.modalidade || 'ainda não escolhi')
           .replace('{pacote}', e.pacote || 'ainda não escolhi');
       } else {
-        msg = m.orcamentoSemEscolha || m.geral;
+        msg = (lp && m.lpOrcamentoSemEscolha) || m.orcamentoSemEscolha || m.geral;
       }
     } else {
       msg = m[contexto] || m.geral;

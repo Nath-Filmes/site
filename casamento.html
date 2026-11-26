@@ -273,6 +273,84 @@
     </div>
   </section>
 
+  <!-- ================= ORÇAMENTO: escolher a modalidade e o pacote e pedir o orçamento no WhatsApp =================
+       Igual à seção "Pacotes" da página Experiência. A escolha vira a mensagem do WhatsApp (js/lp-casamento.js e
+       site.config.js → mensagens → lpOrcamento). Sem valores: eles são enviados pelo WhatsApp. -->
+  <section class="bloco bloco--creme-2 pac lp-orcamento" id="orcamento" data-bloco="lp-orcamento" aria-labelledby="orc-titulo">
+    <div class="container">
+      <header class="pac__cab">
+        <p class="eyebrow">Orçamento</p>
+        <h2 id="orc-titulo" class="titulo t-lg revelar">Escolha o pacote que combina com o <em>seu dia</em></h2>
+        <p class="revelar" style="margin-top:20px">Os pacotes são os mesmos nas duas modalidades. Escolha abaixo e eu monto a mensagem do orçamento para você. <strong>Os valores são enviados pelo WhatsApp.</strong></p>
+      </header>
+
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend class="eyebrow" style="padding:0">1. Escolha a modalidade <small class="dica">clique para selecionar</small></legend>
+        <div class="seletor">
+          <label><input type="radio" name="orc-modalidade" value="StoryMaker">StoryMaker</label>
+          <label><input type="radio" name="orc-modalidade" value="FilmMaker mobile">FilmMaker mobile</label>
+        </div>
+      </fieldset>
+
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend class="eyebrow" style="padding:0;margin-bottom:20px">2. Escolha o pacote</legend>
+        <div class="pac__lista">
+          <div class="pacote revelar">
+            <input type="radio" name="orc-pacote" value="Essencial" aria-labelledby="orc-pac-essencial-t">
+            <span class="pacote__num">01</span>
+            <h3 id="orc-pac-essencial-t">Essencial</h3>
+            <ul><li>Cerimônia completa</li></ul>
+            <p>Votos, entrada, troca de alianças e momentos marcantes.</p>
+            <span class="pacote__escolher"><span></span></span>
+          </div>
+          <div class="pacote revelar" style="--atraso:.08s">
+            <input type="radio" name="orc-pacote" value="O Grande Dia" aria-labelledby="orc-pac-grandedia-t">
+            <span class="pacote__num">02</span>
+            <h3 id="orc-pac-grandedia-t">O Grande Dia</h3>
+            <ul><li>3 horas de making of ou festa</li><li>Cerimônia completa</li></ul>
+            <p>Mais tempo para registrar os detalhes, as emoções e os momentos que tornam esse dia único.</p>
+            <span class="pacote__escolher"><span></span></span>
+          </div>
+          <div class="pacote revelar" style="--atraso:.16s">
+            <input type="radio" name="orc-pacote" value="Celebração" aria-labelledby="orc-pac-celebracao-t">
+            <span class="pacote__num">03</span>
+            <h3 id="orc-pac-celebracao-t">Celebração</h3>
+            <ul><li>Making of da noiva (2h30)</li><li>Cerimônia completa</li><li>Destaques da festa (3h)</li></ul>
+            <p>Do frio na barriga do making of à celebração, uma cobertura completa para guardar cada emoção desse dia.</p>
+            <span class="pacote__escolher"><span></span></span>
+          </div>
+          <div class="pacote revelar" style="--atraso:.24s">
+            <input type="radio" name="orc-pacote" value="História Completa" aria-labelledby="orc-pac-historiacompleta-t">
+            <span class="pacote__num">04</span>
+            <h3 id="orc-pac-historiacompleta-t">História Completa</h3>
+            <ul><li>Pré-wedding (2h30)</li><li>Making of da noiva (2h30)</li><li>Cerimônia completa</li><li>Festa (3h)</li></ul>
+            <p>Para quem quer guardar a história inteira: dos momentos que antecedem o “sim” até a última celebração.</p>
+            <span class="pacote__escolher"><span></span></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="extras revelar">
+        <h3>Registre também os momentos antes do “sim”</h3>
+        <ul class="extras__itens">
+          <li>Jantar de noivado</li>
+          <li>Despedida de solteiro</li>
+          <li>Outros momentos especiais</li>
+        </ul>
+        <p>Adicione vídeos extras à sua experiência e transforme cada etapa dessa história em uma memória para guardar. Disponível para contratação junto a qualquer pacote.</p>
+      </div>
+
+      <div class="resumo revelar">
+        <div>
+          <small>Sua escolha</small>
+          <div class="resumo__escolha" id="lp-resumo-escolha" aria-live="polite">escolha a modalidade · escolha o pacote</div>
+          <p class="aviso-valores"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>Os valores são enviados pelo WhatsApp.</p>
+        </div>
+        <a class="btn btn--claro" data-wa="orcamento" href="#">Pedir orçamento no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= 9. CHAMADA FINAL (fundo preto liso, só com o grão de filme; sem vídeo, a pedido da Nath) ================= -->
   <section class="lp-final cantos" data-bloco="lp-final" aria-labelledby="final-titulo">
     <div class="hero__grao"></div>

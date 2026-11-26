@@ -53,7 +53,12 @@ window.SITE_CONFIG = {
     lpCasamento:
       "Oi, Nath! Vi a sua página e quero reservar a data do meu casamento. Podemos conversar?",
     lpPortfolio:
-      "Oi, Nath! Vi o seu portfólio e quero reservar a data do meu evento."
+      "Oi, Nath! Vi o seu portfólio e quero reservar a data do meu evento.",
+    // Seção "Orçamento" da página de casamento ({modalidade} e {pacote} vêm da escolha da pessoa)
+    lpOrcamento:
+      "Oi, Nath! Vi a sua página e gostaria de um orçamento. Modalidade: {modalidade}. Pacote: {pacote}. Podemos conversar?",
+    lpOrcamentoSemEscolha:
+      "Oi, Nath! Vi a sua página e gostaria de um orçamento para o meu casamento. Pode me ajudar a escolher a modalidade e o pacote?"
   },
 
   /* ------------------------------------------------------------------

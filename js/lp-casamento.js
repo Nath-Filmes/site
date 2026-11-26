@@ -4,6 +4,7 @@
    2) Fluxo "Entender as modalidades" (3 passos) que termina no WhatsApp, sem valores
    3) Frase com o número de casamentos (vem do site.config.js)
    4) Carrega a biblioteca do Supabase só quando o formulário está perto de aparecer
+   5) Seção "Orçamento": escolhe modalidade e pacote e monta a mensagem do WhatsApp (sem valores)
    O formulário em si (máscara, validação, envio, "portfólio liberado") é o js/portfolio.js,
    o mesmo da página Portfólio. Os contatos desta página aparecem no Supabase com origem "lp-casamento".
    ===================================================================== */
@@ -148,11 +149,33 @@
     });
   }
 
+  /* ---------- 5) seção "Orçamento": modalidade + pacote → mensagem do WhatsApp (igual à página Experiência) ---------- */
+  function orcamento() {
+    var resumo = document.getElementById('lp-resumo-escolha');
+    var mods = [].slice.call(document.querySelectorAll('input[name="orc-modalidade"]'));
+    var pacs = [].slice.call(document.querySelectorAll('input[name="orc-pacote"]'));
+    if (!resumo || !mods.length) return;
+
+    function atualizar() {
+      var mod = document.querySelector('input[name="orc-modalidade"]:checked');
+      var pac = document.querySelector('input[name="orc-pacote"]:checked');
+      NF.escolha.modalidade = mod ? mod.value : '';
+      NF.escolha.pacote = pac ? pac.value : '';
+      var m = NF.escolha.modalidade ? '<em>' + NF.esc(NF.escolha.modalidade) + '</em>' : 'escolha a modalidade';
+      var p = NF.escolha.pacote ? '<em>' + NF.esc(NF.escolha.pacote) + '</em>' : 'escolha o pacote';
+      resumo.innerHTML = m + ' · ' + p;
+      NF.atualizarWa(); // refaz o link do botão "Pedir orçamento no WhatsApp" com a escolha
+    }
+    mods.concat(pacs).forEach(function (r) { r.addEventListener('change', atualizar); });
+    atualizar();
+  }
+
   function iniciar() {
     previa();
     casamentos();
     supabaseSobDemanda();
     fluxo();
+    orcamento();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
   else iniciar();
