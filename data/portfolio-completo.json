@@ -3,6 +3,7 @@
     "Esta lista só é carregada DEPOIS que a pessoa preenche o formulário (o HTML da página não traz estes vídeos).",
     "Ela é dividida em seções, uma por modalidade: 'FilmMaker mobile' e 'StoryMaker'. Cada seção tem: titulo, destaque (palavra em itálico ao lado do título, opcional), rotulo (texto pequeno acima do título; se deixar vazio aparece 'Modalidade') e a lista de itens.",
     "estilo (opcional): 'stories' mostra a seção como os stories do Instagram: bolinhas com anel que abrem um visualizador em tela cheia (toque à direita avança, à esquerda volta, segurar pausa). Sem 'estilo', a seção vira uma grade comum de cartões. dica (opcional): frase pequena abaixo do título.",
+    "StoryMaker (stories): cada item é UM story (uma bolinha) e pode ter vários pedaços em 'segmentos', na ordem em que aparecem: { \"arquivo\": \"assets/stories/1/02.mp4\" } para vídeo e { \"foto\": \"assets/stories/1/01.jpg\" } para foto (dura 5 s; para mudar, acrescente \"duracao\": 3). Cada pedaço ganha uma barrinha no topo, e quando o story acaba abre o próximo. poster = foto da bolinha. Os vídeos foram reduzidos com tools/reduzir-video.py (vertical 540x960, leves).",
     "Cada item entre { } é um cartão: tipo (o texto do cartão, ex.: 'Cerimônia e festa'), formato ('vertical' ou 'horizontal'), poster (capa, na pasta assets/posters), previa (vídeo curtinho opcional) e UM destes: arquivo, youtube ou vimeo.",
     "FilmMaker (vídeos longos, na horizontal): publique no YouTube como 'Não listado' e coloque em youtube SÓ o código do vídeo (o que vem depois de youtu.be/ ou de v= no link). A capa (poster) é uma imagem 16:9 em assets/posters.",
     "Atenção: o YouTube mostra o TÍTULO do vídeo no topo do player dentro do site. Se não tiver autorização do casal para aparecer o nome, deixe só iniciais ou um título genérico no YouTube Studio (o link não muda).",
@@ -37,13 +38,161 @@
       "estilo": "stories",
       "dica": "Toque em um story para assistir.",
       "itens": [
-        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Pré wedding, making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Pré wedding, making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Pré wedding", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" },
-        { "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "", "previa": "", "arquivo": "", "youtube": "", "vimeo": "" }
+        {
+          "tipo": "Pré wedding", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/1/capa.jpg",
+          "segmentos": [
+            { "foto": "assets/stories/1/01.jpg" },
+            { "arquivo": "assets/stories/1/02.mp4" },
+            { "foto": "assets/stories/1/03.jpg" },
+            { "arquivo": "assets/stories/1/04.mp4" },
+            { "foto": "assets/stories/1/05.jpg" },
+            { "arquivo": "assets/stories/1/06.mp4" },
+            { "arquivo": "assets/stories/1/07.mp4" },
+            { "foto": "assets/stories/1/08.jpg" }
+          ]
+        },
+        {
+          "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/2/capa.jpg",
+          "segmentos": [
+            { "foto": "assets/stories/2/01.jpg" },
+            { "arquivo": "assets/stories/2/02.mp4" },
+            { "arquivo": "assets/stories/2/03.mp4" },
+            { "arquivo": "assets/stories/2/04.mp4" },
+            { "arquivo": "assets/stories/2/05.mp4" },
+            { "arquivo": "assets/stories/2/06.mp4" },
+            { "foto": "assets/stories/2/07.jpg" },
+            { "arquivo": "assets/stories/2/08.mp4" },
+            { "arquivo": "assets/stories/2/09.mp4" },
+            { "arquivo": "assets/stories/2/10.mp4" },
+            { "arquivo": "assets/stories/2/11.mp4" },
+            { "arquivo": "assets/stories/2/12.mp4" },
+            { "arquivo": "assets/stories/2/13.mp4" },
+            { "arquivo": "assets/stories/2/14.mp4" },
+            { "arquivo": "assets/stories/2/15.mp4" },
+            { "arquivo": "assets/stories/2/16.mp4" },
+            { "arquivo": "assets/stories/2/17.mp4" },
+            { "arquivo": "assets/stories/2/18.mp4" },
+            { "arquivo": "assets/stories/2/19.mp4" }
+          ]
+        },
+        {
+          "tipo": "Pré wedding, making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/3/capa.jpg",
+          "segmentos": [
+            { "foto": "assets/stories/3/01.jpg" },
+            { "arquivo": "assets/stories/3/02.mp4" },
+            { "arquivo": "assets/stories/3/03.mp4" },
+            { "foto": "assets/stories/3/04.jpg" },
+            { "foto": "assets/stories/3/05.jpg" },
+            { "arquivo": "assets/stories/3/06.mp4" },
+            { "arquivo": "assets/stories/3/07.mp4" },
+            { "foto": "assets/stories/3/08.jpg" },
+            { "arquivo": "assets/stories/3/09.mp4" },
+            { "foto": "assets/stories/3/10.jpg" },
+            { "foto": "assets/stories/3/11a.jpg" },
+            { "arquivo": "assets/stories/3/11b.mp4" },
+            { "arquivo": "assets/stories/3/12.mp4" },
+            { "foto": "assets/stories/3/13.jpg" },
+            { "arquivo": "assets/stories/3/14.mp4" },
+            { "arquivo": "assets/stories/3/15.mp4" },
+            { "foto": "assets/stories/3/16.jpg" },
+            { "arquivo": "assets/stories/3/17.mp4" },
+            { "foto": "assets/stories/3/18.jpg" },
+            { "arquivo": "assets/stories/3/19.mp4" },
+            { "arquivo": "assets/stories/3/20.mp4" },
+            { "arquivo": "assets/stories/3/21.mp4" },
+            { "arquivo": "assets/stories/3/22.mp4" },
+            { "foto": "assets/stories/3/23.jpg" },
+            { "arquivo": "assets/stories/3/24.mp4" },
+            { "arquivo": "assets/stories/3/25.mp4" },
+            { "arquivo": "assets/stories/3/26.mp4" },
+            { "arquivo": "assets/stories/3/27.mp4" },
+            { "arquivo": "assets/stories/3/29.mp4" },
+            { "arquivo": "assets/stories/3/30.mp4" },
+            { "arquivo": "assets/stories/3/31.mp4" },
+            { "arquivo": "assets/stories/3/32.mp4" },
+            { "arquivo": "assets/stories/3/33.mp4" },
+            { "arquivo": "assets/stories/3/34.mp4" },
+            { "arquivo": "assets/stories/3/35.mp4" },
+            { "arquivo": "assets/stories/3/36.mp4" },
+            { "arquivo": "assets/stories/3/37.mp4" },
+            { "arquivo": "assets/stories/3/38.mp4" },
+            { "arquivo": "assets/stories/3/39.mp4" },
+            { "arquivo": "assets/stories/3/40.mp4" },
+            { "arquivo": "assets/stories/3/41.mp4" },
+            { "arquivo": "assets/stories/3/42.mp4" },
+            { "arquivo": "assets/stories/3/43.mp4" },
+            { "arquivo": "assets/stories/3/44.mp4" }
+          ]
+        },
+        {
+          "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/4/capa.jpg",
+          "segmentos": [
+            { "arquivo": "assets/stories/4/01.mp4" },
+            { "arquivo": "assets/stories/4/02.mp4" },
+            { "arquivo": "assets/stories/4/03.mp4" },
+            { "arquivo": "assets/stories/4/04.mp4" },
+            { "arquivo": "assets/stories/4/05.mp4" },
+            { "arquivo": "assets/stories/4/06.mp4" },
+            { "arquivo": "assets/stories/4/07.mp4" },
+            { "arquivo": "assets/stories/4/08.mp4" },
+            { "arquivo": "assets/stories/4/09.mp4" },
+            { "arquivo": "assets/stories/4/10.mp4" },
+            { "arquivo": "assets/stories/4/11.mp4" },
+            { "arquivo": "assets/stories/4/12.mp4" },
+            { "arquivo": "assets/stories/4/13.mp4" },
+            { "arquivo": "assets/stories/4/14.mp4" },
+            { "arquivo": "assets/stories/4/15.mp4" },
+            { "arquivo": "assets/stories/4/16.mp4" },
+            { "arquivo": "assets/stories/4/17.mp4" },
+            { "arquivo": "assets/stories/4/18.mp4" },
+            { "arquivo": "assets/stories/4/19.mp4" },
+            { "arquivo": "assets/stories/4/20.mp4" },
+            { "arquivo": "assets/stories/4/21.mp4" },
+            { "arquivo": "assets/stories/4/22.mp4" }
+          ]
+        },
+        {
+          "tipo": "Cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/5/capa.jpg",
+          "segmentos": [
+            { "arquivo": "assets/stories/5/01.mp4" },
+            { "arquivo": "assets/stories/5/02.mp4" },
+            { "arquivo": "assets/stories/5/03.mp4" },
+            { "arquivo": "assets/stories/5/04.mp4" },
+            { "arquivo": "assets/stories/5/05.mp4" },
+            { "arquivo": "assets/stories/5/06.mp4" },
+            { "arquivo": "assets/stories/5/07.mp4" }
+          ]
+        },
+        {
+          "tipo": "Making of e cerimônia", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/6/capa.jpg",
+          "segmentos": [
+            { "arquivo": "assets/stories/6/01.mp4" },
+            { "arquivo": "assets/stories/6/02.mp4" },
+            { "arquivo": "assets/stories/6/03.mp4" },
+            { "arquivo": "assets/stories/6/04.mp4" },
+            { "arquivo": "assets/stories/6/05.mp4" },
+            { "arquivo": "assets/stories/6/06.mp4" },
+            { "arquivo": "assets/stories/6/07.mp4" }
+          ]
+        },
+        {
+          "tipo": "Making of, cerimônia e festa", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/stories/7/capa.jpg",
+          "segmentos": [
+            { "arquivo": "assets/stories/7/01.mp4" },
+            { "arquivo": "assets/stories/7/02.mp4" },
+            { "arquivo": "assets/stories/7/03.mp4" },
+            { "arquivo": "assets/stories/7/04.mp4" },
+            { "arquivo": "assets/stories/7/05.mp4" },
+            { "arquivo": "assets/stories/7/06.mp4" },
+            { "arquivo": "assets/stories/7/07.mp4" },
+            { "arquivo": "assets/stories/7/08.mp4" },
+            { "arquivo": "assets/stories/7/09.mp4" },
+            { "arquivo": "assets/stories/7/10.mp4" },
+            { "arquivo": "assets/stories/7/11.mp4" },
+            { "arquivo": "assets/stories/7/12.mp4" },
+            { "arquivo": "assets/stories/7/13.mp4" }
+          ]
+        }
       ]
     }
   ]

@@ -248,8 +248,8 @@
           '<button class="sv__btn sv__fechar" type="button" aria-label="Fechar os stories">' + NF.ico('fechar') + '</button>' +
         '</div>' +
         '<div class="sv__midia"></div>' +
-        '<button class="sv__zona sv__zona--esq" type="button" aria-label="Story anterior"></button>' +
-        '<button class="sv__zona sv__zona--dir" type="button" aria-label="Próximo story"></button>' +
+        '<button class="sv__zona sv__zona--esq" type="button" aria-label="Anterior"></button>' +
+        '<button class="sv__zona sv__zona--dir" type="button" aria-label="Próximo"></button>' +
       '</div>';
     document.body.appendChild(dlg);
 
@@ -257,7 +257,50 @@
     var midia = dlg.querySelector('.sv__midia');
     var rotuloEl = dlg.querySelector('.sv__rotulo');
     var btnSom = dlg.querySelector('.sv__som');
-    var e = { itens: [], i: 0, botoes: [], origem: null, raf: 0, v: null, dur: 0, decorrido: 0, ultimo: 0, pausado: false, semSom: false, hold: 0, segurou: false, aberto: false, barra: null };
+    // e.i = story (a bolinha); e.s = pedaço (clipe ou foto) dentro do story. Cada pedaço ganha uma barrinha.
+    var e = { itens: [], i: -1, s: 0, segs: [], cache: {}, botoes: [], origem: null, raf: 0, v: null, dur: 0, decorrido: 0, ultimo: 0, pausado: false, semSom: false, hold: 0, segurou: false, aberto: false, barra: null };
+
+    // um story pode ter vários pedaços ("segmentos": clipes e fotos na ordem); sem eles, o próprio item é o único pedaço
+    function segmentosDe(item) {
+      return (item && item.segmentos && item.segmentos.length) ? item.segmentos : [item || {}];
+    }
+
+    function montarBarras() {
+      barras.innerHTML = '';
+      e.segs.forEach(function () { var sp = document.createElement('span'); sp.appendChild(document.createElement('i')); barras.appendChild(sp); });
+      barras.classList.toggle('sv__barras--muitas', e.segs.length > 14);
+    }
+
+    // baixa com antecedência o próximo pedaço, para a troca ser rápida
+    function preparar(seg) {
+      var url = seg && (seg.arquivo || seg.foto);
+      if (!url || e.cache[url]) return;
+      if (seg.arquivo) {
+        var pv = document.createElement('video');
+        pv.preload = 'auto'; pv.muted = true; pv.playsInline = true;
+        pv.setAttribute('playsinline', '');
+        pv.src = seg.arquivo;
+        e.cache[url] = pv;
+      } else {
+        var pi = new Image();
+        pi.src = seg.foto;
+        e.cache[url] = pi;
+      }
+    }
+    function limparCache() {
+      Object.keys(e.cache).forEach(function (k) {
+        var el = e.cache[k];
+        if (el && el.pause) { try { el.removeAttribute('src'); el.load(); } catch (x) { /* ok */ } }
+      });
+      e.cache = {};
+    }
+    function seguinteSeg() {
+      if (e.s < e.segs.length - 1) return e.segs[e.s + 1];
+      var prox = e.itens[e.i + 1];
+      return prox ? segmentosDe(prox)[0] : null;
+    }
+    // fotos e vídeos na horizontal aparecem inteiros (sem cortar); os verticais preenchem a tela
+    function ajustarEncaixe(el, larg, alt) { if (larg && alt && larg > alt) el.style.objectFit = 'contain'; }
 
     function atualizarSom() {
       btnSom.innerHTML = e.semSom ? SOM_DESLIGADO : SOM_LIGADO;
@@ -284,41 +327,60 @@
       e.raf = requestAnimationFrame(tick);
     }
 
-    function mostrar(n) {
+    function mostrar(n, s) {
       parar();
-      e.i = n;
+      s = s || 0;
       var item = e.itens[n] || {};
+      if (n !== e.i) { // mudou de story: refaz as barrinhas e o nome
+        e.i = n;
+        e.segs = segmentosDe(item);
+        montarBarras();
+        rotuloEl.textContent = item.tipo || '';
+        if (e.botoes[n]) e.botoes[n].classList.add('story--vista');
+      }
+      e.s = s;
+      var seg = e.segs[s] || {};
       var is = barras.querySelectorAll('i');
-      for (var j = 0; j < is.length; j++) is[j].style.width = j < n ? '100%' : '0%';
-      e.barra = is[n];
-      rotuloEl.textContent = item.tipo || '';
-      if (e.botoes[n]) e.botoes[n].classList.add('story--vista');
+      for (var j = 0; j < is.length; j++) is[j].style.width = j < s ? '100%' : '0%';
+      e.barra = is[s];
       e.pausado = false; e.decorrido = 0; e.dur = 0; e.ultimo = performance.now();
       btnSom.hidden = true;
 
-      if (item.arquivo) {
-        var v = document.createElement('video');
+      if (seg.arquivo) {
+        var v = e.cache[seg.arquivo] || document.createElement('video');
+        delete e.cache[seg.arquivo];
         v.playsInline = true;
         v.setAttribute('playsinline', '');
         v.muted = e.semSom;
-        v.preload = 'auto'; // só o story da vez é baixado
-        if (item.poster) v.poster = item.poster;
-        v.src = item.arquivo;
-        v.addEventListener('ended', proximo);
+        v.preload = 'auto';
+        if (seg.poster) v.poster = seg.poster;
+        if (!v.getAttribute('src')) v.src = seg.arquivo;
+        v.addEventListener('ended', function () { if (e.v === v) proximo(); });
+        v.addEventListener('error', function () { if (e.v === v) proximo(); }); // arquivo com problema: pula
+        v.addEventListener('loadedmetadata', function () { ajustarEncaixe(v, v.videoWidth, v.videoHeight); });
+        if (v.videoWidth) ajustarEncaixe(v, v.videoWidth, v.videoHeight);
         midia.appendChild(v);
         e.v = v;
         btnSom.hidden = false;
         atualizarSom();
         var tentativa = v.play();
         if (tentativa && tentativa.catch) tentativa.catch(function () { v.muted = true; e.semSom = true; atualizarSom(); v.play().catch(function () { /* ok */ }); });
-      } else if (item.youtube || item.vimeo) {
+      } else if (seg.foto) {
+        var im = document.createElement('img');
+        im.alt = '';
+        im.decoding = 'async';
+        im.addEventListener('load', function () { e.decorrido = 0; e.ultimo = performance.now(); ajustarEncaixe(im, im.naturalWidth, im.naturalHeight); }); // a contagem começa quando a foto aparece
+        im.src = seg.foto;
+        midia.appendChild(im);
+        e.dur = (seg.duracao ? seg.duracao : 5) * 1000;
+      } else if (seg.youtube || seg.vimeo) {
         var f = document.createElement('iframe');
         f.title = item.tipo || 'Story';
         f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
         f.setAttribute('allowfullscreen', '');
-        f.src = item.youtube
-          ? 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(item.youtube) + '?autoplay=1&rel=0&playsinline=1'
-          : 'https://player.vimeo.com/video/' + String(item.vimeo) + (String(item.vimeo).indexOf('?') > -1 ? '&' : '?') + 'autoplay=1&dnt=1';
+        f.src = seg.youtube
+          ? 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(seg.youtube) + '?autoplay=1&rel=0&playsinline=1'
+          : 'https://player.vimeo.com/video/' + String(seg.vimeo) + (String(seg.vimeo).indexOf('?') > -1 ? '&' : '?') + 'autoplay=1&dnt=1';
         midia.appendChild(f);
       } else {
         // ainda sem vídeo: espaço reservado por 5 segundos, depois passa para o próximo
@@ -328,11 +390,21 @@
         midia.appendChild(caixa);
         e.dur = 5000;
       }
+      preparar(seguinteSeg());
       e.raf = requestAnimationFrame(tick);
     }
 
-    function proximo() { if (e.i < e.itens.length - 1) mostrar(e.i + 1); else dlg.close(); }
-    function anterior() { mostrar(Math.max(0, e.i - 1)); }
+    // avança de pedaço em pedaço; no fim do story, abre o próximo story (como no Instagram)
+    function proximo() {
+      if (e.s < e.segs.length - 1) mostrar(e.i, e.s + 1);
+      else if (e.i < e.itens.length - 1) mostrar(e.i + 1, 0);
+      else dlg.close();
+    }
+    function anterior() {
+      if (e.s > 0) mostrar(e.i, e.s - 1);
+      else if (e.i > 0) mostrar(e.i - 1, 0);
+      else mostrar(e.i, 0);
+    }
     function pausar() { e.pausado = true; if (e.v) e.v.pause(); }
     function retomar() { if (!e.pausado) return; e.pausado = false; e.ultimo = performance.now(); if (e.v) e.v.play().catch(function () { /* ok */ }); }
 
@@ -363,6 +435,7 @@
     dlg.addEventListener('close', function () {
       e.aberto = false;
       parar();
+      limparCache();
       if (e.origem && e.origem.focus) e.origem.focus();
     });
 
@@ -372,10 +445,9 @@
         e.botoes = botoes || [];
         e.origem = e.botoes[inicio] || null;
         e.aberto = true;
-        barras.innerHTML = '';
-        itens.forEach(function () { var s = document.createElement('span'); s.appendChild(document.createElement('i')); barras.appendChild(s); });
+        e.i = -1; e.segs = [];
         if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
-        mostrar(inicio);
+        mostrar(inicio, 0);
       }
     };
   }

@@ -1,0 +1,13 @@
+STORIES DO STORYMAKER (portfólio completo)
+
+Cada pasta numerada (1 a 7) é um story, na mesma ordem das bolinhas na página.
+Dentro dela, os arquivos têm o número da ordem em que aparecem (01, 02, 03...):
+  .mp4  = clipe de vídeo (reduzido a partir do original: vertical 540x960, H.264 + AAC)
+  .jpg  = foto da Nath, idêntica à original (dura 5 segundos no story)
+  capa.jpg = foto da bolinha: as capas de destaque que a Nath enviou (1080x1920, idênticas às originais; o arquivo "Capas - Destaques.zip" traz 1.jpg a 7.jpg, uma para cada story)
+
+Quando dois arquivos tinham o mesmo número (pasta 3, número 11), a foto vem antes: 11a.jpg e 11b.mp4.
+
+Quem liga tudo isso é o arquivo data/portfolio-completo.json (campo "segmentos" de cada story).
+Para reduzir um vídeo novo:  python tools/reduzir-video.py ENTRADA.mov SAIDA.mp4
+Origem dos clipes: pasta do Drive "Arquivos site / Videos story maker" (a pasta 8 e os arquivos sem número não entraram).

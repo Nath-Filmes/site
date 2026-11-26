@@ -655,8 +655,9 @@ button.pf { cursor: pointer; }
 .story__anel { display: block; width: 90px; height: 90px; padding: 3px; border: 2.5px solid var(--vinho); border-radius: 50%; transition: transform .3s var(--suave), border-color .3s; }
 .story:hover .story__anel { transform: scale(1.05); }
 .story--vista .story__anel { border-color: var(--linha); }
-.story__capa { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #262120; color: var(--creme); }
-.story__capa img { width: 100%; height: 100%; object-fit: cover; }
+.story__capa { position: relative; display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #262120; color: var(--creme); }
+/* a foto preenche a bolinha e é cortada pelo centro (capas em pé, 9:16, não ficam presas no topo) */
+.story__capa img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .story__capa .ico { width: 28px; height: 28px; }
 .story__nome { font: 600 .62rem/1.35 var(--f-sans); letter-spacing: .06em; text-transform: uppercase; text-align: center; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
 
@@ -678,7 +679,8 @@ button.pf { cursor: pointer; }
 .sv__btn[hidden] { display: none; }
 .sv__btn .ico { width: 22px; height: 22px; }
 .sv__midia { position: absolute; inset: 0; z-index: 1; }
-.sv__midia video, .sv__midia iframe { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.sv__midia video, .sv__midia img, .sv__midia iframe { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.sv__barras--muitas { gap: 2px; }
 .sv__midia .slot { position: absolute; inset: 0; aspect-ratio: auto; }
 .sv__zona { position: absolute; top: 74px; bottom: 0; z-index: 3; padding: 0; background: transparent; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .sv__zona--esq { left: 0; width: 34%; }
