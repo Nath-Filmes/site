@@ -1,0 +1,55 @@
+{
+  "_como_editar": [
+    "Estes são os vídeos da seção 'Algumas histórias contadas em vídeo' da página de casamento (casamento.html). Mexer aqui NÃO muda o Portfólio nem a Home.",
+    "Cada item entre { } é um cartão que abre o vídeo ao clicar (o vídeo não toca sozinho). Os campos são os mesmos de data/portfolio-aberto.json: tipo (rótulo do cartão), formato ('vertical' ou 'horizontal'), poster (capa em assets/posters, foto em pé 4:5) e UM destes: arquivo, youtube ou vimeo.",
+    "titulo (nome do casal) e local são opcionais: só preencha com autorização. Vazio = não aparece nome nenhum.",
+    "Hoje são 4 vídeos, na ordem em que aparecem: 1) Pré wedding, 2) a noiva com o véu caindo sobre ela (trend-3), 3) os padrinhos passando com o casal no meio (trend-2) e 4) o save the date (o mesmo das 'Histórias recentes' da Home). Com 4 vídeos a grade tem 4 colunas no computador; com 2 ou 3, os cartões ficam centralizados.",
+    "Para trocar um vídeo, mude os campos poster e arquivo. Para acrescentar, copie um item inteiro { ... } e cole logo depois dele, com uma vírgula entre eles (a página mostra no máximo 4). Não apague as vírgulas nem as aspas."
+  ],
+  "itens": [
+    {
+      "tipo": "Pré wedding",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/capa-pre-wedding.jpg",
+      "previa": "",
+      "arquivo": "assets/video/pre-wedding.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "tipo": "Trend",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/capa-trend-3.jpg",
+      "previa": "",
+      "arquivo": "assets/video/trend-3.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "tipo": "Trend",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/capa-trend-2.jpg",
+      "previa": "",
+      "arquivo": "assets/video/trend-2.mp4",
+      "youtube": "",
+      "vimeo": ""
+    },
+    {
+      "tipo": "Save the date",
+      "titulo": "",
+      "local": "",
+      "formato": "vertical",
+      "poster": "assets/posters/home-historia-2.jpg",
+      "previa": "",
+      "arquivo": "assets/video/exemplo2.mp4",
+      "youtube": "",
+      "vimeo": ""
+    }
+  ]
+}

@@ -95,6 +95,10 @@
   var pagina = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   if (pagina === '') pagina = 'index.html';
 
+  // Página de captação (casamento.html): <body data-lp>. Topo só com a logo e o botão de WhatsApp (sem menu, para a
+  // visitante não se perder) e rodapé curto. As outras páginas não mudam.
+  var LP = document.body.hasAttribute('data-lp');
+
   function itensMenu(classe) {
     return MENU.map(function (i) {
       var arquivo = i.href.split('#')[0].toLowerCase();
@@ -107,6 +111,16 @@
      Topo + menu móvel + botão flutuante
      ------------------------------------------------------------------ */
   function htmlTopo() {
+    if (LP) {
+      return '' +
+        '<a class="pular" href="#principal">Pular para o conteúdo</a>' +
+        '<header class="topo topo--lp" id="topo"><div class="container topo__in">' +
+          '<span class="topo__logo">' + logo('logo-preto', 'Nath Filmes', 170, 28) + '</span>' +
+          // em telas muito estreitas o "minha" some (.lp-opc), para o botão caber ao lado da logo
+          '<div class="topo__cta"><a class="btn btn--escuro" data-wa="auto" href="#">Reservar<span class="lp-opc"> minha</span> data</a></div>' +
+        '</div></header>' +
+        '<a class="wa-flutuante" data-wa="auto" href="#" aria-label="Falar com a Nath no WhatsApp">' + ico('whatsapp', 'ico--solido') + '<span>Falar no WhatsApp</span></a>';
+    }
     return '' +
       '<a class="pular" href="#principal">Pular para o conteúdo</a>' +
       '<header class="topo" id="topo"><div class="container topo__in">' +
@@ -130,6 +144,21 @@
   function htmlRodape() {
     var ano = new Date().getFullYear();
     var email = C.email ? '<li><a href="mailto:' + C.email + '">' + C.email + '</a></li>' : '';
+    if (LP) {
+      return '' +
+        '<footer class="rodape rodape--lp"><div class="container">' +
+          '<div class="rodape__lp">' +
+            logo('logo-branco-cantos', 'Nath Filmes', 240, 95) +
+            '<p class="rodape__frase">' + (C.marca || 'Nath Filmes') + ' · ' + (C.cidade || '') + '</p>' +
+            '<ul class="rodape__redes">' +
+              '<li><a href="' + (C.instagram || '#') + '" target="_blank" rel="noopener">Instagram @nath.filmes</a></li>' +
+              '<li><a href="' + (C.tiktok || '#') + '" target="_blank" rel="noopener">TikTok @nath.filmes</a></li>' +
+            '</ul>' +
+          '</div>' +
+          '<div class="rodape__base"><span>© ' + ano + ' Nath Filmes. Todos os direitos reservados.</span>' +
+            '<a href="privacidade.html">Política de privacidade</a></div>' +
+        '</div></footer>';
+    }
     return '' +
       '<footer class="rodape"><div class="container">' +
         '<div class="rodape__grid">' +

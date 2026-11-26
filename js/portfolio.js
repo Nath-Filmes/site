@@ -583,7 +583,8 @@
         email: email.value.trim(),
         celular: cel.value.trim(),
         consentimento: 'sim',
-        origem: 'portfolio',
+        // de onde veio o contato: a página de casamento (casamento.html) marca o <body> com data-origem="lp-casamento"
+        origem: (document.body.getAttribute('data-origem') || 'portfolio').slice(0, 40),
         pagina: location.href.split('#')[0],
         data: new Date().toISOString()
       };

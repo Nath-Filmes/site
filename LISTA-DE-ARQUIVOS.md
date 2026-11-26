@@ -68,9 +68,12 @@ Sem fotos fixas. A abertura da página é só o fundo preto com o texto (a foto 
 
 Onde escrever: `site.config.js`, espaços `"hero-video"` (`src`, `poster`) e `"empresas-video"`.
 
+**Página de casamento (`casamento.html`, link para quem te procura sem referência):** já usa fotos e vídeos que estão no site, sem nada novo para enviar. O “respiro” no meio da página usa as fotos em polaroide da Home (`respiro-grande`, `respiro-polaroid-1` e `-2`); a chamada final é preta lisa, sem vídeo de fundo. A seção “Algumas histórias contadas em vídeo” usa `data/lp-casamento.json` (hoje: `pre-wedding.mp4`, `trend-3.mp4`, `trend-2.mp4` e `exemplo2.mp4`, o save the date). Ainda **não há vídeo institucional** para ela (hoje só casamentos).
+
 ---
 
 ## C. Vídeos do portfólio (cartões)
+*(A página `casamento.html` reaproveita estes mesmos vídeos: prévia = `data/portfolio-aberto.json`; portfólio completo = `data/portfolio-completo.json`.)*
 
 Use **número no nome** (nunca o nome do casal). O nome do casal, só com autorização, vai no campo `titulo` do JSON.
 

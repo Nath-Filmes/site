@@ -48,7 +48,12 @@ window.SITE_CONFIG = {
     portfolio:
       "Oi, Nath! Acabei de ver o seu portfólio completo e quero reservar a data do meu casamento.",
     geral:
-      "Oi, Nath! Vi o seu site e gostaria de conversar."
+      "Oi, Nath! Vi o seu site e gostaria de conversar.",
+    // Página de casamento (casamento.html): mensagens próprias, para você saber de onde a pessoa veio
+    lpCasamento:
+      "Oi, Nath! Vi a sua página e quero reservar a data do meu casamento. Podemos conversar?",
+    lpPortfolio:
+      "Oi, Nath! Vi o seu portfólio e quero reservar a data do meu evento."
   },
 
   /* ------------------------------------------------------------------
@@ -137,6 +142,10 @@ window.SITE_CONFIG = {
     "negativo-4":         { src: "assets/img/negativo-4.jpg", alt: "Nath sorrindo, segurando o celular com uma luz de vídeo acoplada" },
     // Sem foto por enquanto: enquanto src estiver vazio, este espaço NÃO aparece na página (o texto da equipe fica sozinho).
     // Quando a foto chegar, coloque o arquivo em assets/img/ e preencha src (e alt): ela aparece sozinha.
-    "equipe-irmao":       { src: "", alt: "" }
+    "equipe-irmao":       { src: "", alt: "" },
+
+    /* ---- PÁGINA DE CASAMENTO (casamento.html) ---- */
+    // (O respiro com as fotos em moldura de polaroide usa as mesmas fotos da Home: respiro-grande, respiro-polaroid-1 e -2.
+    //  A chamada final da página é preta lisa, sem vídeo.)
   }
 };

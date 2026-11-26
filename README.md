@@ -16,10 +16,11 @@ Feito só com HTML, CSS e JavaScript, **sem instalar nada e sem “build”**: d
 | `sobre.html` | Sobre a Nath e a equipe |
 | `experiencia.html` | Modalidades e pacotes (sem valores) e pedido de orçamento |
 | `portfolio.html` | Exemplos disponíveis (abas Casamentos e Trends) e portfólio completo (liberado pelo formulário, dividido em FilmMaker mobile e StoryMaker) |
+| `casamento.html` | **Página de casamento (captação)**, para mandar o link a quem te procura sem referência: `www.nathfilmes.com/casamento` (veja a seção 8b) |
 | `privacidade.html` | Política de privacidade em linguagem simples |
 | `404.html` | Página de “não encontrado” |
 | **`site.config.js`** | **Número do WhatsApp, links, mensagens, formulário, fotos e vídeos** |
-| `data/` | Listas editáveis: `portfolio-aberto.json`, `portfolio-completo.json`, `depoimentos.json` |
+| `data/` | Listas editáveis: `portfolio-aberto.json`, `portfolio-completo.json`, `depoimentos.json`, `historias-home.json` (Home) e `lp-casamento.json` (página de casamento) |
 | `assets/logo/` | Logos (PNG e WebP, fundo transparente, em preto, branco, vinho e creme) |
 | `assets/img/`, `assets/video/`, `assets/posters/` | Onde entram suas fotos, vídeos e capas |
 | `css/style.css` | Visual (cores, fontes, espaçamentos). As cores estão no topo, em `:root` |
@@ -206,6 +207,20 @@ O formulário só envia com a caixa de consentimento marcada e leva para a `priv
 Em `site.config.js`:
 - **`agendaAberta`**: troque `ativo: false` por `true` (e ajuste o ano em `texto`) para aparecer “Agenda aberta para 2027” na faixa em movimento da Home.
 - **`casamentos`**: mostra “mais de 20 casamentos filmados desde fevereiro de 2025” na página Sobre (`prefixo`, `total` e `desde`). Atualize o número quando quiser. Para esconder, use `mostrar: false`; para tirar o “mais de”, deixe `prefixo: ""`.
+
+### 8b. Página de casamento (`casamento.html`)
+
+É uma página só, sem o menu do site, feita para quem recebe o seu link e precisa decidir: vídeo de abertura, “por que esse registro vale para sempre”, diferenciais, depoimentos, as duas modalidades, prévia do portfólio com o formulário que libera o completo, sobre você, chamada final e perguntas frequentes. Todos os botões levam ao WhatsApp.
+
+- **Endereço:** `https://www.nathfilmes.com/casamento` (o `vercel.json` faz `/casamento` abrir o `casamento.html`; os dois funcionam). Não precisa de subdomínio.
+- **Fora do Google:** a página tem `noindex` (só chega quem tem o link) e não está no `sitemap.xml`. Para o Google mostrar a página, apague a linha `<meta name="robots" ...>` do `casamento.html` e acrescente o endereço no `sitemap.xml`.
+- **Número do WhatsApp:** vem do `site.config.js` (`whatsapp`), o mesmo do resto do site. As mensagens dos botões são `mensagens.lpCasamento` (botões da página) e `mensagens.lpPortfolio` (depois de liberar o portfólio): assim você sabe, pela primeira frase, que a pessoa veio desta página.
+- **Formulário:** é o mesmo do Portfólio (`js/portfolio.js`, Supabase, tabela `leads_portfolio`). Na coluna `origem` os contatos desta página aparecem como **`lp-casamento`** (e a coluna `pagina` mostra o endereço). Depois do envio, o formulário dá lugar ao portfólio completo (`data/portfolio-completo.json`: FilmMaker, StoryMaker e Pré wedding) e ao botão “Reservar minha data”. A biblioteca do Supabase só é baixada quando a pessoa chega perto do formulário.
+- **Vídeos e fotos:** a primeira tela usa o vídeo da Home (`hero-video`). Entre “Por que esse registro vale para sempre” e os diferenciais há um **respiro com as fotos em moldura de polaroide** (as mesmas da Home: `respiro-grande`, `respiro-polaroid-1` e `respiro-polaroid-2` no `site.config.js`; a faixa de 3 vídeos que existia ali foi retirada a pedido da Nath). A chamada final (“Seu casamento é a história que você vai querer rever a vida inteira”) é preta lisa, com o grão de filme, **sem vídeo de fundo** (a Nath pediu para tirar). Os vídeos da seção “Algumas histórias contadas em vídeo” vêm de `data/lp-casamento.json` (independente do Portfólio e da Home): hoje 4, nesta ordem: Pré wedding, a noiva com o véu caindo (`trend-3`), os padrinhos passando com o casal no meio (`trend-2`) e o save the date (o mesmo das “Histórias recentes” da Home). Os cartões abrem o vídeo ao clicar; com 4 vídeos a grade tem 4 colunas no computador (com 1 a 3, ficam centralizados). Para trocar ou acrescentar, é só editar esse arquivo.
+- **Depoimentos:** são os mesmos prints da Home (`data/depoimentos.json`). Nada foi inventado.
+- **Sobre:** a frase “Já filmei mais de 20 casamentos desde fevereiro de 2025” vem de `casamentos` no `site.config.js`.
+- **Fluxo “Entender as modalidades”:** janela com 3 passos (modalidade, momentos, WhatsApp). Os nomes dos pacotes aparecem só como nomes, sem valores. A mensagem final é montada no `js/lp-casamento.js`.
+- **Visual:** reaproveita os mesmos blocos do site (`css/style.css`, seção 17, classes `.lp-`).
 
 ---
 
