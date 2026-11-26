@@ -1,9 +1,10 @@
 {
   "_como_editar": [
     "Esta lista só é carregada DEPOIS que a pessoa preenche o formulário (o HTML da página não traz estes vídeos).",
-    "Ela é dividida em seções, uma por modalidade: 'FilmMaker mobile' e 'StoryMaker'. Cada seção tem: titulo, destaque (palavra em itálico ao lado do título, opcional), rotulo (texto pequeno acima do título; se deixar vazio aparece 'Modalidade') e a lista de itens.",
+    "Ela é dividida em seções: 'FilmMaker mobile', 'StoryMaker' e 'Pré wedding'. Cada seção tem: titulo, destaque (palavra em itálico ao lado do título, opcional), rotulo (texto pequeno acima do título; se deixar vazio aparece 'Modalidade') e a lista de itens.",
     "estilo (opcional): 'stories' mostra a seção como os stories do Instagram: bolinhas com anel que abrem um visualizador em tela cheia (toque à direita avança, à esquerda volta, segurar pausa). Sem 'estilo', a seção vira uma grade comum de cartões. dica (opcional): frase pequena abaixo do título.",
     "StoryMaker (stories): cada item é UM story (uma bolinha) e pode ter vários pedaços em 'segmentos', na ordem em que aparecem: { \"arquivo\": \"assets/stories/1/02.mp4\" } para vídeo e { \"foto\": \"assets/stories/1/01.jpg\" } para foto (dura 5 s; para mudar, acrescente \"duracao\": 3). Cada pedaço ganha uma barrinha no topo, e quando o story acaba abre o próximo. poster = foto da bolinha. Os vídeos foram reduzidos com tools/reduzir-video.py (vertical 540x960, leves).",
+    "Pré wedding: grade de cartões verticais (reels de 1 a 1,5 min em assets/prewedding/N.mp4, reduzidos com tools/reduzir-video.py; capas em assets/posters/capa-prewedding-N.jpg, por enquanto um quadro de cada vídeo). 'colunas': 4 na seção deixa 4 cartões lado a lado no computador (no celular segue 1 ou 2 por linha). Para trocar a capa por uma foto sua, é só substituir o arquivo da capa (mesmo nome) ou apontar 'poster' para a nova foto.",
     "Cada item entre { } é um cartão: tipo (o texto do cartão, ex.: 'Cerimônia e festa'), formato ('vertical' ou 'horizontal'), poster (capa, na pasta assets/posters), previa (vídeo curtinho opcional) e UM destes: arquivo, youtube ou vimeo.",
     "FilmMaker (vídeos longos, na horizontal): publique no YouTube como 'Não listado' e coloque em youtube SÓ o código do vídeo (o que vem depois de youtu.be/ ou de v= no link). A capa (poster) é uma imagem 16:9 em assets/posters.",
     "Atenção: o YouTube mostra o TÍTULO do vídeo no topo do player dentro do site. Se não tiver autorização do casal para aparecer o nome, deixe só iniciais ou um título genérico no YouTube Studio (o link não muda).",
@@ -193,6 +194,19 @@
             { "arquivo": "assets/stories/7/13.mp4" }
           ]
         }
+      ]
+    },
+    {
+      "id": "prewedding",
+      "rotulo": "Ensaio",
+      "titulo": "Pré",
+      "destaque": "wedding",
+      "colunas": 4,
+      "itens": [
+        { "tipo": "Pré wedding", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/posters/capa-prewedding-1.jpg", "previa": "", "arquivo": "assets/prewedding/1.mp4", "youtube": "", "vimeo": "" },
+        { "tipo": "Pré wedding e save the date", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/posters/capa-prewedding-2.jpg", "previa": "", "arquivo": "assets/prewedding/2.mp4", "youtube": "", "vimeo": "" },
+        { "tipo": "Pré wedding", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/posters/capa-prewedding-3.jpg", "previa": "", "arquivo": "assets/prewedding/3.mp4", "youtube": "", "vimeo": "" },
+        { "tipo": "Pré wedding", "categoria": "casamento", "titulo": "", "local": "", "formato": "vertical", "poster": "assets/posters/capa-prewedding-4.jpg", "previa": "", "arquivo": "assets/prewedding/4.mp4", "youtube": "", "vimeo": "" }
       ]
     }
   ]

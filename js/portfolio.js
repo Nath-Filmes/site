@@ -521,6 +521,8 @@
         } else {
           var g = document.createElement('div');
           g.className = 'p-grade';
+          // colunas (opcional): 4 deixa 4 cartões lado a lado no computador (bom para seções com 4 vídeos)
+          if (s.colunas) g.setAttribute('data-colunas', String(s.colunas));
           (s.itens || []).forEach(function (item, i) { g.appendChild(NF.cartaoPortfolio(item, { atraso: ((i % 3) * .1) + 's' })); });
           sec.appendChild(g);
         }
